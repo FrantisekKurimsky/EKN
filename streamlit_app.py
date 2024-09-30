@@ -84,7 +84,7 @@ def first():
             example = problem['code']
             result = eval(example)
             # st.subheader(example)
-            st.subheader(str(result))
+            st.latex(str(result))
 
 
 
