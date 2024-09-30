@@ -5,7 +5,7 @@ import pandas as pd
 math_problems_1 = [
     {
         "question": "Banka poskytuje 11 % ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?",
-        "solution": r"u=K_0⋅i⋅n \\ u=K_0⋅i⋅n",
+        "solution": r"\text{základ úrokovania:} r=1+i=1+p/100, p: \text{percentová úroková miera a } i: \text{úroková sadzba} \\ u=K_0⋅i⋅nu=K_0⋅i⋅n",
         "table": None
     },
     {
