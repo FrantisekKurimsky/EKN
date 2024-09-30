@@ -1,17 +1,34 @@
 import streamlit as st
 from urllib.parse import urlencode, parse_qs
+import pandas as pd
 
-math_problems = [
+math_problems_1 = [
     {
-        "question": r"\text{Solve for } x \text{ in the equation:} \ ax^2 + bx + c = 0",
+        "question": r"\text{Banka poskytuje 11 % ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?}",
         "solution": r"x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}"
     },
     {
-        "question": r"\text{Find the derivative of:} \ f(x) = 3x^3 + 2x^2 - 5x + 1",
+        "question": r"\text{Banka poskytuje na vkladoch 8 % ročný úrok. Karol potrebuje za 9 mesiacov vrátiť dlžobu 5000 €. Koľko musí  teraz vložiť do banky, aby mal za 9 mesiacov k dispozícii práve túto sumu?}",
         "solution": r"f'(x) = 9x^2 + 4x - 5"
     },
     {
-        "question": r"\text{Evaluate the integral:} \ \int_0^1 x^2 \, dx",
+        "question": r"\text{Helena investovala 5000 € na zamestnanecký účet, ktorý prináša 8 % ročný úrok. Ako dlho má ponechať túto sumu na účte, aby získala 300 €?}",
+        "solution": r"\frac{1}{3}"
+    },
+    {
+        "question": r"\text{Inštalovaný výkon modelovej elektrizačnej sústavy je koncom roka 2009  Pi = 234 GW. Aký veľký inštalovaný výkon bude mať táto sústava roku 2015, ak predpokladáme každoročný vzrast inštalovaného výkonu o 6 %?}",
+        "solution": r"\frac{1}{3}"
+    },
+    {
+        "question": r"\text{Na účely budúcej investičnej výstavby začiatkom roku 2010 ukladá podnik do banky podľa dlhodobého finančného plánu na konci uvedených rokov čiastky podľa nasledujúcej tabuľky. Akú  čiastku bude mať podnik k dispozícii pri začatí výstavby, ak úroková miera  p = 6 % ?}",
+        "table": pd.DataFrame({
+            "Rok": [2000, 2001, 2002, 2003, 2004, 2006, 2006],
+            "K (mil. Eur)": [3.8, 4.1, 3.6, 3.9, 4.0, 3.7]
+        }),
+        "solution": r"\frac{1}{3}"
+    },
+    {
+        "question": r"\text{Helena investovala 5000 € na zamestnanecký účet, ktorý prináša 8 % ročný úrok. Ako dlho má ponechať túto sumu na účte, aby získala 300 €?}",
         "solution": r"\frac{1}{3}"
     },
 ]
@@ -31,7 +48,7 @@ def first():
     st.title("Cvičenie 1.")
 
     slide_index = st.selectbox(
-        "Select a math problem:",
+        "Príklad:",
         list(range(len(math_problems))),
         format_func=lambda x: f"Príklad: 1.0{x+1}"
     )
@@ -41,6 +58,8 @@ def first():
     problem = math_problems[slide_index]
     
     st.latex(problem["question"])
+    if problem['table'] is not None:
+        st.table(problem['table'])
     
     with st.expander("Riešenie"):
         st.latex(problem["solution"])
