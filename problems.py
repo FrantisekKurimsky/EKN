@@ -47,7 +47,7 @@ math_problems_1 = [
     },
     {
         "question": "Aká bude celková hodnota uloženého radu každoročných konštantných platieb vo výške K = 2500 € po 20 rokov pri p = 2 %?",
-        "solution": r"\textbf{Sporiteľ } \text{určuje budúcu hodnotu } n \text{ pravidelných platieb koncom období.} \\[3mm] \text{Vypočíta sa ako súčet } n \text{ členov geometrickej postupnosti.} \\[3mm]s_n = \sum_{t=1}^{n}{r^{n-t}} = r^{n-1} + r^{n-2} + r^{n-3} + \dots +r^{n-n} \\[3mm] s_n = \frac{r^n - 1}{r-1}. \\[3mm] r^n = (1+i)^n \\[5mm] K_20 = \frac{r^n -1 }{r - 1} * K\\[3mm] K_20 = \frac{1.02^20 -1 }{1.02 - 1} * 2500\\[3mm] K_20 = \frac{1.02^20 -1 }{0.02} *2500" ,
+        "solution": r"\textbf{Sporiteľ } \text{určuje budúcu hodnotu } n \text{ pravidelných platieb koncom období.} \\[3mm] \text{Vypočíta sa ako súčet } n \text{ členov geometrickej postupnosti.} \\[3mm]s_n = \sum_{t=1}^{n}{r^{n-t}} = r^{n-1} + r^{n-2} + r^{n-3} + \dots +r^{n-n} \\[3mm] s_n = \frac{r^n - 1}{r-1}. \\[3mm] r^n = (1+i)^n \\[5mm] K_{20} = \frac{r^n -1 }{r - 1} * K\\[3mm] K_{20} = \frac{1.02^20 -1 }{1.02 - 1} * 2500\\[3mm] K_{20} = \frac{1.02^20 -1 }{0.02} *2500" ,
         "table": None,
         "code": "((1.02**20 -1)/0.02) *2500"
 
