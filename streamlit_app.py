@@ -23,7 +23,7 @@ math_problems_1 = [
     },
     {
         "question": "Inštalovaný výkon modelovej elektrizačnej sústavy je koncom roka 2009  Pi = 234 GW. Aký veľký inštalovaný výkon bude mať táto sústava roku 2015, ak predpokladáme každoročný vzrast inštalovaného výkonu o 6%?",
-        "solution": r"\frac{1}{3}",
+        "solution": r"Zložené úrokovanie \\[5mm] \text{Kapitál na začiatku 1. periódy = } K_0 \\[5mm] \text{Kapitál na konci 1. periódy = } K_1 = K_0 + u = K_0 + K_0 * i = K_0 (1 + i)",
         "table": None,
         "code": None
     },
