@@ -4,7 +4,7 @@ import pandas as pd
 
 math_problems_1 = [
     {
-        "question": r"\text{Banka poskytuje 11 % ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?}",
+        "question": r"\text{Banka poskytuje} 11 \% \text{ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?}",
         "solution": r"x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}",
         "table": None
     },
@@ -62,7 +62,7 @@ def first():
     # Display the current math problem and solution
     problem = math_problems_1[slide_index]
     
-    st.write(problem["question"])
+    st.latex(problem["question"])
     if problem['table'] is not None:
         st.write(problem['table'])
     
