@@ -39,12 +39,12 @@ math_problems_1 = [
     },
     {
         "question": "Rozhodnite, o aký investičný úver má dnes požiadať podnik banku, aby pri úrokovej miere p = 6% mohol tento úver práve splatiť po 9 rokoch predpokladanými voľnými finančnými zdrojmi (odpismi a časťou zisku), ktoré sa budú podľa dlhodobého plánu podniku tvoriť tak, ako je vidieť z nasledujúcej tabuľky:",
-        "solution": r"\textbf{Zložené odúrokovanie (diskontovanie)} \\[3mm] \text{Výpočet súčasnej hodnoty  kapitálu } K_0 \text{ v závislosti od budúcej hodnoty } K_n. \\[3mm] \text{diskont } D = K_n - K_0. \\[3mm] \text{Prepočet budúcej hodnoty na súčasnú : } \\ K_0 = K_n*(1+i)^{-n}, \\[3mm] \text{zložený odúročiteľ je: }\\ r^{-n} = (1+i)^{-n} \\ \text{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_} \\[5mm] K_0 = 13 * 1.06^{-1} + 15 * 1.06^{-2} + 16*1.06^{-4} + 17 * 1.06^{-6} + 16 * 1.6^{-8} + 17*1.06^{-9} = " ,
+        "solution": r"\textbf{Zložené odúrokovanie (diskontovanie)} \\[3mm] \text{Výpočet súčasnej hodnoty  kapitálu } K_0 \text{ v závislosti od budúcej hodnoty } K_n. \\[3mm] \text{diskont } D = K_n - K_0. \\[3mm] \text{Prepočet budúcej hodnoty na súčasnú : } \\ K_0 = K_n*(1+i)^{-n}, \\[3mm] \text{zložený odúročiteľ je: }\\ r^{-n} = (1+i)^{-n} \\ \text{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_} \\[5mm] K_0 = 13 * 1.06^{-1} + 15 * 1.06^{-2} + 16*1.06^{-4} + 17 * 1.06^{-6} + 16 * 1.06^{-8} + 17*1.06^{-9} = " ,
         "table": pd.DataFrame({
             "Rok": [int(x) for x in [1, 2, 4, 6, 8, 9]],
             "K (mil. Eur)": [13, 15, 16, 17, 18, 17]
         }).T,
-        "code": "(13 * (1.06**(-1))) + (15 * (1.06**(-2))) + (16 * (1.06**(-4))) + (17 * (1.06**(-6))) + (16 * (1.6**(-8))) + (17 * (1.06**(-9)))"
+        "code": "(13 * (1.06**(-1))) + (15 * (1.06**(-2))) + (16 * (1.06**(-4))) + (17 * (1.06**(-6))) + (16 * (1.06**(-8))) + (17 * (1.06**(-9)))"
 
     },
 ]
@@ -83,7 +83,7 @@ def first():
         if problem['code'] is not None:
             example = problem['code']
             result = eval(example)
-            st.write(example)
+            # st.write(example)
             st.latex(str(result))
 
 
