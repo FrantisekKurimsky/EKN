@@ -82,8 +82,8 @@ def first():
         if problem['code'] is not None:
             example = problem['code']
             result = eval(example)
-            st.write(example)
-            st.write(str(result))
+            st.subheader(example)
+            st.subheader(str(result))
 
 
 
