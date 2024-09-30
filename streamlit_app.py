@@ -16,16 +16,6 @@ math_problems = [
     },
 ]
 
-def get_slide_index():
-    query_params = st.experimental_get_query_params()
-    if "slide" in query_params:
-        return int(query_params["slide"][0])
-    return 0
-
-# Function to set the current slide index in the URL
-def set_slide_index(slide_index):
-    st.experimental_set_query_params(slide=slide_index)
-
 
 st.sidebar.title("Menu")
 pages = st.sidebar.radio("", ["Domov", "Cvičenie-1"])
@@ -36,7 +26,11 @@ def home_page():
 
     
 def first():
-    slide_index = get_slide_index()
+    slide_index = st.radio(
+        "Select a math problem:",
+        list(range(len(math_problems))),
+        format_func=lambda x: f"Problem {x + 1}"
+    )
 
     st.title("Math Problem Slides")
     
@@ -52,16 +46,6 @@ def first():
     
     # Create navigation buttons for slides
     col1, col2, col3 = st.columns([1, 2, 1])
-    
-    with col1:
-        if st.button("Previous"):
-            if slide_index > 0:
-                set_slide_index(slide_index - 1)
-    
-    with col3:
-        if st.button("Next"):
-            if slide_index < len(math_problems) - 1:
-                set_slide_index(slide_index + 1)
     
     st.write(f"Slide {slide_index + 1} of {len(math_problems)}")
 
