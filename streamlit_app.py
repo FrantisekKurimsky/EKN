@@ -6,22 +6,26 @@ math_problems_1 = [
     {
         "question": "Banka poskytuje 11 % ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?",
         "solution": r"\text{základ úrokovania: } i=\frac{p}{100}, \\[5mm] p: \text{percentová úroková miera a } i: \text{úroková sadzba,} \\[5mm] \text{začiatočná hodnota kapitálu (istiny) : } K_0, \\[5mm] \text{dĺžka úrokového obdobia : } n, \\[5mm] u=K_0⋅i⋅n \\[5mm] \text{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_} \\ \text{Jan, Feb, Mar, Apr, Maj, Jun, } \\ \text{30.Jun presne druhé švtrťročie, preto berieme do úvahy polovicu roka,}\\ \text{a teda polovicu z 11\% z 5000 €}",
-        "table": None
+        "table": None,
+        "code": 5000 * 0.11 * 1/2
     },
     {
         "question": "Banka poskytuje na vkladoch 8 % ročný úrok. Karol potrebuje za 9 mesiacov vrátiť dlžobu 5000 €. Koľko musí  teraz vložiť do banky, aby mal za 9 mesiacov k dispozícii práve túto sumu?",
         "solution": r"f'(x) = 9x^2 + 4x - 5",
-        "table": None
+        "table": None,
+        "code": None
     },
     {
         "question": "Helena investovala 5000 € na zamestnanecký účet, ktorý prináša 8 % ročný úrok. Ako dlho má ponechať túto sumu na účte, aby získala 300€?",
         "solution": r"\frac{1}{3}",
-        "table": None
+        "table": None,
+        "code": None
     },
     {
         "question": "Inštalovaný výkon modelovej elektrizačnej sústavy je koncom roka 2009  Pi = 234 GW. Aký veľký inštalovaný výkon bude mať táto sústava roku 2015, ak predpokladáme každoročný vzrast inštalovaného výkonu o 6%?",
         "solution": r"\frac{1}{3}",
-        "table": None
+        "table": None,
+        "code": None
     },
     {
         "question": "Na účely budúcej investičnej výstavby začiatkom roku 2010 ukladá podnik do banky podľa dlhodobého finančného plánu na konci uvedených rokov čiastky podľa nasledujúcej tabuľky. Akú  čiastku bude mať podnik k dispozícii pri začatí výstavby, ak úroková miera p=6%?",
@@ -29,7 +33,8 @@ math_problems_1 = [
             "Rok": [int(x) for x in [2000, 2001, 2002, 2004, 2006, 2008]],
             "K (mil. Eur)": [3.8, 4.1, 3.6, 3.9, 4.0, 3.7]
         }).T,
-        "solution": r"\frac{1}{3}"
+        "solution": r"\frac{1}{3}",
+        "code": None
     },
     {
         "question": "Rozhodnite, o aký investičný úver má dnes požiadať podnik banku, aby pri úrokovej miere p = 6% mohol tento úver práve splatiť po 9 rokoch predpokladanými voľnými finančnými zdrojmi (odpismi a časťou zisku), ktoré sa budú podľa dlhodobého plánu podniku tvoriť tak, ako je vidieť z nasledujúcej tabuľky:",
@@ -38,6 +43,7 @@ math_problems_1 = [
             "Rok": [int(x) for x in [1, 2, 4, 6, 8, 9]],
             "K (mil. Eur)": [13, 15, 16, 17, 18, 17]
         }).T,
+        "code": None
 
     },
 ]
@@ -73,9 +79,10 @@ def first():
     with st.expander("Riešenie"):
         st.latex(problem["solution"])
 
-        with st.echo():
-            u = 5000 * 0.11 * 1/2
-            u
+        if problem['code'] is not None:
+            with st.echo():
+                result = code
+                result
 
 
 
