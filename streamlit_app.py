@@ -42,7 +42,7 @@ def first():
     # Display the current math problem and solution
     problem = math_problems[slide_index]
     
-    st.write(f"Príklad: 1.0{PROBLEM+1}")
+    st.write(f"Príklad: 1.0{slide_index+1}")
     st.latex(problem["question"])
     
     with st.expander("Riešenie"):
