@@ -16,7 +16,7 @@ def home_page():
     # Button for Cvičenie 1
     with col1:
         if st.button("Cvičenie 1."):
-            pages = "Cvičenie 1."
+            st.session_state.page = "first"
 
     
 def first():
@@ -52,5 +52,5 @@ def first():
 # Navigation logic
 if pages == "Domov":
     home_page()
-elif pages == "Cvičenie 1.":
+elif pages == "Cvičenie 1." or st.session_state.page == "Cvičenie 1.":
     first()
