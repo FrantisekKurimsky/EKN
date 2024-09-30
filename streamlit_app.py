@@ -1,5 +1,15 @@
 import streamlit as st
+from urllib.parse import urlencode, parse_qs
 
+def get_slide_index():
+    query_params = st.experimental_get_query_params()
+    if "slide" in query_params:
+        return int(query_params["slide"][0])
+    return 0
+
+# Function to set the current slide index in the URL
+def set_slide_index(slide_index):
+    st.experimental_set_query_params(slide=slide_index)
 
 
 st.sidebar.title("Menu")
@@ -11,7 +21,7 @@ def home_page():
 
     
 def first():
-    PROBLEM = 0
+    slide_index = get_slide_index()
     math_problems = [
         {
             "question": r"\text{Solve for } x \text{ in the equation:} \ ax^2 + bx + c = 0",
@@ -30,7 +40,7 @@ def first():
     
     
     # Display the current math problem and solution
-    problem = math_problems[PROBLEM]
+    problem = math_problems[slide_index]
     
     st.write(f"Príklad: 1.0{PROBLEM+1}")
     st.latex(problem["question"])
@@ -43,16 +53,15 @@ def first():
     
     with col1:
         if st.button("Previous"):
-            if PROBLEM > 0:
-                PROBLEM -= 1
-            
+            if slide_index > 0:
+                set_slide_index(slide_index - 1)
     
     with col3:
         if st.button("Next"):
-            if PROBLEM < len(math_problems) - 1:
-                PROBLEM += 1
+            if slide_index < len(math_problems) - 1:
+                set_slide_index(slide_index + 1)
     
-    st.write(f"Slide {PROBLEM + 1} of {len(math_problems)}")
+    st.write(f"Slide {slide_index + 1} of {len(math_problems)}")
 
 
 # Navigation logic
