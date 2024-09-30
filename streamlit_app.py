@@ -16,7 +16,7 @@ def home_page():
     # Button for Cvičenie 1
     with col1:
         if st.button("Cvičenie 1."):
-            first()
+            pages = "Cvičenie 1."
 
     
 def first():
