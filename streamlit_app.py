@@ -6,7 +6,7 @@ from problems import math_problems_1
 
 
 st.sidebar.title("Menu")
-pages = st.sidebar.radio("", ["Domov", "Cvičenie 1."])
+pages = st.sidebar.radio("", ["Domov", "Cvičenie 1."], key="selected_page")
 
 def home_page():
     st.title("Ekonomika v elektroenergetike")
@@ -16,7 +16,7 @@ def home_page():
     # Button for Cvičenie 1
     with col1:
         if st.button("Cvičenie 1."):
-            st.session_state.page = "Cvičenie 1."
+            st.session_state.selected_page = "Cvičenie 1."
 
     
 def first():
@@ -50,7 +50,7 @@ def first():
 
 
 # Navigation logic
-if pages == "Domov":
+if st.session_state.selected_page == "Domov":
     home_page()
-elif pages == "Cvičenie 1." or st.session_state.page == "Cvičenie 1.":
+elif st.session_state.selected_page == "Cvičenie 1.":
     first()
