@@ -1,6 +1,21 @@
 import streamlit as st
 from urllib.parse import urlencode, parse_qs
 
+math_problems = [
+    {
+        "question": r"\text{Solve for } x \text{ in the equation:} \ ax^2 + bx + c = 0",
+        "solution": r"x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}"
+    },
+    {
+        "question": r"\text{Find the derivative of:} \ f(x) = 3x^3 + 2x^2 - 5x + 1",
+        "solution": r"f'(x) = 9x^2 + 4x - 5"
+    },
+    {
+        "question": r"\text{Evaluate the integral:} \ \int_0^1 x^2 \, dx",
+        "solution": r"\frac{1}{3}"
+    },
+]
+
 def get_slide_index():
     query_params = st.experimental_get_query_params()
     if "slide" in query_params:
@@ -22,20 +37,7 @@ def home_page():
     
 def first():
     slide_index = get_slide_index()
-    math_problems = [
-        {
-            "question": r"\text{Solve for } x \text{ in the equation:} \ ax^2 + bx + c = 0",
-            "solution": r"x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}"
-        },
-        {
-            "question": r"\text{Find the derivative of:} \ f(x) = 3x^3 + 2x^2 - 5x + 1",
-            "solution": r"f'(x) = 9x^2 + 4x - 5"
-        },
-        {
-            "question": r"\text{Evaluate the integral:} \ \int_0^1 x^2 \, dx",
-            "solution": r"\frac{1}{3}"
-        },
-    ]
+
     st.title("Math Problem Slides")
     
     
