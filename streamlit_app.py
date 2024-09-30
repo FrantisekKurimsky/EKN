@@ -11,6 +11,7 @@ def home_page():
 
     
 def first():
+    PROBLEM = 0
     math_problems = [
         {
             "question": r"\text{Solve for } x \text{ in the equation:} \ ax^2 + bx + c = 0",
@@ -27,12 +28,9 @@ def first():
     ]
     st.title("Math Problem Slides")
     
-    # Use session state to keep track of the current slide index
-    if 'current_slide' not in st.session_state:
-        st.session_state.current_slide = 0
     
     # Display the current math problem and solution
-    problem = math_problems[st.session_state.current_slide]
+    problem = math_problems[PROBLEM]
     
     st.write("Problem:")
     st.latex(problem["question"])
@@ -45,15 +43,16 @@ def first():
     
     with col1:
         if st.button("Previous"):
-            if st.session_state.current_slide > 0:
-                st.session_state.current_slide -= 1
+            if PROBLEM > 0:
+                PROBLEM -= 1
+            
     
     with col3:
         if st.button("Next"):
-            if st.session_state.current_slide < len(math_problems) - 1:
-                st.session_state.current_slide += 1
+            if PROBLEM < len(math_problems) - 1:
+                PROBLEM += 1
     
-    st.write(f"Slide {st.session_state.current_slide + 1} of {len(math_problems)}")
+    st.write(f"Slide {PROBLEM + 1} of {len(math_problems)}")
 
 
 # Navigation logic
