@@ -22,7 +22,7 @@ math_problems_1 = [
     {
         "question": r"\text{Na účely budúcej investičnej výstavby začiatkom roku 2010 ukladá podnik do banky podľa dlhodobého finančného plánu na konci uvedených rokov čiastky podľa nasledujúcej tabuľky. Akú  čiastku bude mať podnik k dispozícii pri začatí výstavby, ak úroková miera  p = 6 % ?}",
         "table": pd.DataFrame({
-            "Rok": [2000, 2001, 2002, 2003, 2004, 2006, 2006],
+            "Rok": [2000, 2001, 2002, 2004, 2006, 2008],
             "K (mil. Eur)": [3.8, 4.1, 3.6, 3.9, 4.0, 3.7]
         }),
         "solution": r"\frac{1}{3}"
