@@ -2,8 +2,8 @@ import streamlit as st
 
 
 
-st.sidebar.title("Navigation")
-pages = st.sidebar.radio("Go to", ["Domov", "1. Cvičenie"])
+st.sidebar.title("Menu")
+pages = st.sidebar.radio("", ["Domov", "Cvičenie-1"])
 
 def home_page():
     st.title("Ekonomika v elektroenergetike - cvičenia")
@@ -29,5 +29,5 @@ def first():
 # Navigation logic
 if pages == "Domov":
     home_page()
-elif pages == "1. Cvičenie":
+elif pages == "Cvičenie-1":
     first()
