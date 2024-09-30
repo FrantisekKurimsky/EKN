@@ -6,11 +6,17 @@ from problems import math_problems_1
 
 
 st.sidebar.title("Menu")
-pages = st.sidebar.radio("", ["Domov", "Cvičenie-1"])
+pages = st.sidebar.radio("", ["Domov", "Cvičenie 1."])
 
 def home_page():
     st.title("Ekonomika v elektroenergetike")
     st.title("Cvičenia")
+    col1, col2, col3 = st.columns(3)
+
+    # Button for Cvičenie 1
+    with col1:
+        if st.button("Cvičenie 1."):
+            st.session_state.page = "first"
 
     
 def first():
