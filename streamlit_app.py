@@ -75,7 +75,7 @@ def first():
 
         with st.echo():
             u = 5000 * 0.11 * 1/2
-            print(u)
+            u
 
 
 
