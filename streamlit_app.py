@@ -28,7 +28,7 @@ math_problems_1 = [
         "table": pd.DataFrame({
             "Rok": [2000, 2001, 2002, 2004, 2006, 2008],
             "K (mil. Eur)": [3.8, 4.1, 3.6, 3.9, 4.0, 3.7]
-        }),
+        }).T,
         "solution": r"\frac{1}{3}"
     },
     {
