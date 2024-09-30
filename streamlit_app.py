@@ -52,5 +52,5 @@ def first():
 # Navigation logic
 if pages == "Domov":
     home_page()
-elif pages == "Cvičenie-1":
+elif pages == "Cvičenie 1.":
     first()
