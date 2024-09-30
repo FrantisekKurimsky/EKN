@@ -5,19 +5,23 @@ import pandas as pd
 math_problems_1 = [
     {
         "question": r"\text{Banka poskytuje 11 % ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?}",
-        "solution": r"x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}"
+        "solution": r"x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}",
+        "table": None
     },
     {
         "question": r"\text{Banka poskytuje na vkladoch 8 % ročný úrok. Karol potrebuje za 9 mesiacov vrátiť dlžobu 5000 €. Koľko musí  teraz vložiť do banky, aby mal za 9 mesiacov k dispozícii práve túto sumu?}",
-        "solution": r"f'(x) = 9x^2 + 4x - 5"
+        "solution": r"f'(x) = 9x^2 + 4x - 5",
+        "table": None
     },
     {
         "question": r"\text{Helena investovala 5000 € na zamestnanecký účet, ktorý prináša 8 % ročný úrok. Ako dlho má ponechať túto sumu na účte, aby získala 300 €?}",
-        "solution": r"\frac{1}{3}"
+        "solution": r"\frac{1}{3}",
+        "table": None
     },
     {
         "question": r"\text{Inštalovaný výkon modelovej elektrizačnej sústavy je koncom roka 2009  Pi = 234 GW. Aký veľký inštalovaný výkon bude mať táto sústava roku 2015, ak predpokladáme každoročný vzrast inštalovaného výkonu o 6 %?}",
-        "solution": r"\frac{1}{3}"
+        "solution": r"\frac{1}{3}",
+        "table": None
     },
     {
         "question": r"\text{Na účely budúcej investičnej výstavby začiatkom roku 2010 ukladá podnik do banky podľa dlhodobého finančného plánu na konci uvedených rokov čiastky podľa nasledujúcej tabuľky. Akú  čiastku bude mať podnik k dispozícii pri začatí výstavby, ak úroková miera  p = 6 % ?}",
@@ -29,7 +33,8 @@ math_problems_1 = [
     },
     {
         "question": r"\text{Helena investovala 5000 € na zamestnanecký účet, ktorý prináša 8 % ročný úrok. Ako dlho má ponechať túto sumu na účte, aby získala 300 €?}",
-        "solution": r"\frac{1}{3}"
+        "solution": r"\frac{1}{3}",
+        "table": None
     },
 ]
 
