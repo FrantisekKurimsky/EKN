@@ -74,7 +74,7 @@ def first():
         st.latex(problem["solution"])
 
         with st.echo():
-            st.write(5000 * 0.11 * 1/2)
+            (5000 * 0.11 * 1/2)
 
 
 # Navigation logic
