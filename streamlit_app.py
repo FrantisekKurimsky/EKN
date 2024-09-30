@@ -83,7 +83,7 @@ def first():
         if problem['code'] is not None:
             example = problem['code']
             result = eval(example)
-            # st.subheader(example)
+            st.write(example)
             st.latex(str(result))
 
 
