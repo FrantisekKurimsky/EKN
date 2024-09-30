@@ -81,7 +81,7 @@ def first():
 
         if problem['code'] is not None:
             with st.echo():
-                result = code
+                result = problem['code']
                 result
 
 
