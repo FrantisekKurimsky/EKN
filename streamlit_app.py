@@ -32,10 +32,10 @@ def first():
     # Display the current math problem and solution
     problem = math_problems[PROBLEM]
     
-    st.write("Problem:")
+    st.write(f"Príklad: 1.0{PROBLEM+1}")
     st.latex(problem["question"])
     
-    with st.expander("Solution"):
+    with st.expander("Riešenie"):
         st.latex(problem["solution"])
     
     # Create navigation buttons for slides
