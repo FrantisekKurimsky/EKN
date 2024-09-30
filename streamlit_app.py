@@ -80,11 +80,11 @@ def first():
         st.latex(problem["solution"])
 
         if problem['code'] is not None:
+            example = problem['code']
+            result = eval(example)
             with st.echo():
-                example = problem['code']
                 example
-                result = eval(example)
-                result
+                str(result)
 
 
 
