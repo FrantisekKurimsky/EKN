@@ -33,7 +33,7 @@ math_problems_1 = [
             "Rok": [int(x) for x in [2020, 2021, 2022, 2024, 2026, 2028]],
             "K (mil. Eur)": [3.8, 4.1, 3.6, 3.9, 4.0, 3.7]
         }).T,
-        "solution": r"\text{Začiatkom roka 2030 potrebujeme peniaze, teda postupne} \\[5mm] K_{2020-2029} = 3.8 * (1 + 0.06) ^ 9 \\[5mm] K_{2021-2029} = 4.1 * (1 + 0.06) ^ 8 \\ \vdots \\ K_{2028-2029} = 3.7 * (1 + 0.06) ^ 1 \text{Spolu: } \\[5mm] K_2030 = 3.8 * 1.06^9 + 4.1 * 1.06^8 + 3.6 * 1.06^7 + 3.9 * 1.06^5 + 4 * 1.06^3 + 3.7*1.06 = ",
+        "solution": r"\text{Začiatkom roka 2030 potrebujeme peniaze, teda postupne} \\[5mm] K_{2020-2029} = 3.8 * (1 + 0.06) ^ 9 \\[5mm] K_{2021-2029} = 4.1 * (1 + 0.06) ^ 8 \\ \vdots \\ K_{2028-2029} = 3.7 * (1 + 0.06) ^ 1 \text{Spolu: } \\[5mm] K_{2030} = 3.8 * 1.06^9 + 4.1 * 1.06^8 + 3.6 * 1.06^7 + 3.9 * 1.06^5 + 4 * 1.06^3 + 3.7*1.06 = ",
         "code": "3.8 * 1.06**9 + 4.1 * 1.06**8 + 3.6 * 1.06**7 + 3.9 * 1.06**5 + 4 * 1.06**3 + 3.7*1.06"
 
     },
@@ -83,7 +83,7 @@ def first():
         if problem['code'] is not None:
             example = problem['code']
             result = eval(example)
-            st.subheader(example)
+            # st.subheader(example)
             st.subheader(str(result))
 
 
