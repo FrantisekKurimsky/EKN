@@ -45,4 +45,11 @@ math_problems_1 = [
         "code": "(13 * (1.06**(-1))) + (15 * (1.06**(-2))) + (16 * (1.06**(-4))) + (17 * (1.06**(-6))) + (16 * (1.06**(-8))) + (17 * (1.06**(-9)))"
 
     },
+    {
+        "question": "Aká bude celková hodnota uloženého radu každoročných konštantných platieb vo výške K = 2500 € po 20 rokov pri p = 2 %?",
+        "solution": r"" ,
+        "table": None,
+        "code": None
+
+    },
 ]
