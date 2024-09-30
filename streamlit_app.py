@@ -26,26 +26,25 @@ def home_page():
 
     
 def first():
-    slide_index = st.radio(
+    
+
+    st.title("Cvičenie 1.")
+
+    slide_index = st.selectbox(
         "Select a math problem:",
         list(range(len(math_problems))),
         format_func=lambda x: f"Problem {x + 1}"
     )
-
-    st.title("Math Problem Slides")
     
     
     # Display the current math problem and solution
     problem = math_problems[slide_index]
     
-    st.write(f"Príklad: 1.0{slide_index+1}")
+    st.subheader(f"Príklad: 1.0{slide_index+1}")
     st.latex(problem["question"])
     
     with st.expander("Riešenie"):
         st.latex(problem["solution"])
-    
-    # Create navigation buttons for slides
-    col1, col2, col3 = st.columns([1, 2, 1])
     
     st.write(f"Slide {slide_index + 1} of {len(math_problems)}")
 
