@@ -81,7 +81,10 @@ def first():
 
         if problem['code'] is not None:
             with st.echo():
-                eval(problem['code'])
+                example = problem['code']
+                example
+                result = eval(example)
+                result
 
 
 
