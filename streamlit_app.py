@@ -49,13 +49,13 @@ def first():
 
     slide_index = st.selectbox(
         "Príklad:",
-        list(range(len(math_problems))),
+        list(range(len(math_problems_1))),
         format_func=lambda x: f"Príklad: 1.0{x+1}"
     )
     
     
     # Display the current math problem and solution
-    problem = math_problems[slide_index]
+    problem = math_problems_1[slide_index]
     
     st.latex(problem["question"])
     if problem['table'] is not None:
@@ -63,8 +63,6 @@ def first():
     
     with st.expander("Riešenie"):
         st.latex(problem["solution"])
-    
-    st.write(f"Slide {slide_index + 1} of {len(math_problems)}")
 
 
 # Navigation logic
