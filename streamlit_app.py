@@ -33,14 +33,13 @@ def first():
     slide_index = st.selectbox(
         "Select a math problem:",
         list(range(len(math_problems))),
-        format_func=lambda x: f"Problem {x + 1}"
+        format_func=lambda x: f"Príklad: 1.0{slide_index+1}"
     )
     
     
     # Display the current math problem and solution
     problem = math_problems[slide_index]
-    
-    st.subheader(f"Príklad: 1.0{slide_index+1}")
+
     st.latex(problem["question"])
     
     with st.expander("Riešenie"):
