@@ -27,7 +27,7 @@ def first():
     ''')
 
 # Navigation logic
-if pages == "Home":
+if pages == "Domov":
     home_page()
-elif pages == "Math Problem":
+elif pages == "1. Cvičenie":
     first()
