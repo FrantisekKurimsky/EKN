@@ -47,7 +47,7 @@ math_problems_1 = [
     },
     {
         "question": "Aká bude celková hodnota uloženého radu každoročných konštantných platieb vo výške K = 2500 € po 20 rokov pri p = 2 %?",
-        "solution": r"" ,
+        "solution": r"\textbf{Sporiteľ } \text{určuje budúcu hodnotu} n \text{jednotkových pravidelných platieb koncom období} \\[3mm] \text{Vypočíta sa ako súčet } n \text{ členov geometrickej postupnosti} \\[3mm]s_n = \sum_{t=1}^{n}{r^{n-t}} = r^{n-1} + r^{n-2} + r^{n-3} + \dots +r^{n-n} \\[3mm] s_n = \frac{r^n - 1}{r-1}" ,
         "table": None,
         "code": None
 
