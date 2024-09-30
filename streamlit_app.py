@@ -73,6 +73,9 @@ def first():
     with st.expander("Riešenie"):
         st.latex(problem["solution"])
 
+        with st.echo():
+            st.write('This code will be printed')
+
 
 # Navigation logic
 if pages == "Domov":
