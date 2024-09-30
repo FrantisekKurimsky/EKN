@@ -62,9 +62,9 @@ def first():
     # Display the current math problem and solution
     problem = math_problems_1[slide_index]
     
-    st.latex(problem["question"])
+    st.write(problem["question"])
     if problem['table'] is not None:
-        st.table(problem['table'])
+        st.write(problem['table'])
     
     with st.expander("Riešenie"):
         st.latex(problem["solution"])
