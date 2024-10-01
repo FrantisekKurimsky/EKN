@@ -3,8 +3,7 @@ from urllib.parse import urlencode, parse_qs
 import pandas as pd
 from problems import math_problems_1
 
-
-
+st.set_page_config(layout="wide")
 st.sidebar.title("Menu")
 pages = st.sidebar.radio("", ["Domov", "Cvičenie 1."])
 
