@@ -54,7 +54,7 @@ math_problems_1 = [
     },
     {
         "question": "Aká je súčasná celková hodnota uloženého radu konštantných platieb z príkladu ?",
-        "solution": r"\textbf{Zásobovateľ } \text{určuje súčasnú hodnotu n jednotkových}\\[3mm] \text{pravidelných platieb koncom období.} \\[3mm] \text{Vypočíta sa ako súčet n členov geometrickej postupnosti.} \\[3mm] z_n = \sum_{t=1}^{n}{r^{-t}} = r^{-1} + r^{-2} + r^{-3} + \dots + r^{-n} \\[3mm] z_n = \frac{r^n-1}{r^n*(r-1)}\\[5mm] K_0 = \frac{r^{20} - 1}{r^{20} * (r-1)} * K \\[3mm] K_0 = \frac{1.02^{20}-1}{1.02^{20}*(1.02-1)}*2500\\[3mm]K_0 = \frac{1.02^{20}-1}{1.02^{20}*0.02}*2500\\[5mm] \text{Teda ak chceme naraz zaplatiť sumu tak,}\\[2mm] \text{aby sme po 20 rokoch získali 60743.4245,} \\[2mm] \text{potrebujeme zaplatiť 40878.5833.}\\[2mm] \text{Pravidelnými platbami zaplatíme} 2500*20=5000 €" ,
+        "solution": r"\textbf{Zásobovateľ } \text{určuje súčasnú hodnotu n jednotkových}\\[3mm] \text{pravidelných platieb koncom období.} \\[3mm] \text{Vypočíta sa ako súčet n členov geometrickej postupnosti.} \\[3mm] z_n = \sum_{t=1}^{n}{r^{-t}} = r^{-1} + r^{-2} + r^{-3} + \dots + r^{-n} \\[3mm] z_n = \frac{r^n-1}{r^n*(r-1)}\\[5mm] K_0 = \frac{r^{20} - 1}{r^{20} * (r-1)} * K \\[3mm] K_0 = \frac{1.02^{20}-1}{1.02^{20}*(1.02-1)}*2500\\[3mm]K_0 = \frac{1.02^{20}-1}{1.02^{20}*0.02}*2500\\[5mm] \text{Teda ak chceme naraz zaplatiť sumu tak,}\\[2mm] \text{aby sme po 20 rokoch získali 60743.4245,} \\[2mm] \text{potrebujeme zaplatiť 40878.5834.}\\[2mm] \text{Pravidelnými platbami zaplatíme } 2500*20=5000 €" ,
         "table": None,
         "code": "((1.02**20-1)/(1.02**20*0.02))*2500"
 
