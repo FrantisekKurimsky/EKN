@@ -59,4 +59,11 @@ math_problems_1 = [
         "code": "((1.02**20-1)/(1.02**20*0.02))*2500"
 
     },
+    {
+        "question": "Akú čiastku musí občan ukladať, aby o 6 rokov mal na účte potrebnú sumu v hodnote 352000 € pri úrokovej miere 4 % ?",
+        "solution": r"AHOJ \textbf{Fondovateľ } \text{vyjadruje stanovenie radu každoročných konštantných platieb, }\\[3mm]\text{ktoré v budúcnosti vytvoria požadovanú hodnotu. }\\[3mm]\text{Jeho výpočet je prevrátenou hodnotou sporiteľa:} \\[3mm] f_n = \frac{r-1}{r^n-1}\\[5mm] K = \frac{r-1}{r^6-1}*K_6\\[3mm]K = \frac{1.04-1}{1.04^6-1}*352000" ,
+        "table": None,
+        "code": "((1.04-1)/(1.04^6-1))*352000"
+
+    },
 ]
