@@ -66,4 +66,11 @@ math_problems_1 = [
         "code": "((1.04-1)/(1.04**6-1))*352000"
 
     },
+    {
+        "question": "Podnik žiada od banky úver na realizáciu investičných zámerov vo výške 2,3 mil. €. Banka poskytla úver zo splatnosťou 10 rokov pri  p = 6 %. Akou čiastkou spláca podnik každoročne dlžobu?",
+        "solution": r"AHOJ \textbf{Umorovateľ} \text{ vyjadruje splácanie (umorovanie) pôžičky, resp. výpočet budúcich hodnôt} \\[3mm] \text{každoročných konštantných platieb zo súčasnej hodnoty pôžičky.} \\[3mm] \text{Určuje opakované splátky koncom n období zo súčasnej jednotkovej hodnoty (anuita zo súčasnej hodnoty} \\[3mm]\text{). Jeho výpočet je prevrátenou hodnotou zásobovateľa:} \\[3mm]a_n = \frac{r^n*(r-1)}{r^n-1} \\[6mm] A = \frac{r^{10}*(r-1)}{r^{10}-1}*K_0" ,
+        "table": None,
+        "code": None
+
+    },
 ]
