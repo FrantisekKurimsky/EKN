@@ -120,7 +120,7 @@ math_problems_2 = [
     },
     {
         "question": "Ak boli investičné náklady v prvom roku výstavby Ni1 = 50 mil. € a  q = 1,05, ich aktualizovaná hodnota k začiatku prvého roku prevádzky pri čase výstavby Tv = 5 rokov je",
-        "solution": r"\text{Podobne možno použiť metódu zloženého úrokovania pre prepočty nákladov a ziskov podľa :} \\[3mm] N_{kj} = N_jq^{k-j} \\[3mm] N_{kj} \text{sú náklady j-teho roku prepočítané na k-ty rok, } \\[3mm] N_j \text{sú náklady j-teho roku} \\ \text{\_\_\_} \\[5mm] q^{k-j} = (1+z)^{k-j} \\[3mm] N_{05} = N_{01} * 1.05^{5-1} = 50 * 10^6 * 1.05^{5-1} = ",
+        "solution": r"\text{Podobne možno použiť metódu zloženého úrokovania pre prepočty nákladov a ziskov podľa :} \\[3mm] N_{kj} = N_jq^{k-j} \\[3mm] N_{kj} \text{ sú náklady j-teho roku prepočítané na k-ty rok, } \\[3mm] N_j \text{ sú náklady j-teho roku} \\[3mm] \textbf{Prepočítané (aktualizované) investičné náklady }\\[3mm]N_{ip}=\sum_{t=1}^{T_v}{N_{it}q^{T_v-T_{\Delta}-t}}\text{\_\_\_} \\[5mm] q^{k-j} = (1+z)^{k-j} \\[3mm] N_{05} = N_{01} * 1.05^{5-1} = 50 * 10^6 * 1.05^{5-1} = ",
         "table": None,
         "code": "(50 * (10**6)) * (1.05**4)",
         "solutiontable": None
