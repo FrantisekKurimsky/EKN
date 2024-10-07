@@ -141,7 +141,7 @@ math_problems_2 = [
     },
     {
         "question": "Stanovte ročnú kvótu pre variant výstavby elektrárne s výkonom 2 x 500 MW, ak ročné úroky sú 5% , ekonomická životnosť elektrárne je 25 rokov, pomerné náklady na údržbu  p_ú  =  0,04 / rok, pomerné náklady na mzdy  p_mz  =  0,008 / rok a ostatné pomerné náklady post  = 0.002 / rok.",
-        "solution": r"\textbf{Pomerné stále náklady, tzv. ročná kvóta} \\[3mm] \text{Vyjadruje prepočet stálych nákladov (investičných a prevádzkových) na jeden priemerný rok životnosti investície} \\[3mm] \frac{r^{T_ž} * (r-1)}{r^{T_ž}-1} + p_ú + p_{mz} + p_{ost}",
+        "solution": r"\textbf{Pomerné stále náklady, tzv. ročná kvóta} \\[3mm] \text{Vyjadruje prepočet stálych nákladov (investičných a prevádzkových) na jeden priemerný rok životnosti investície} \\[3mm] k = \frac{r^{T_ž} * (r-1)}{r^{T_ž}-1} + p_ú + p_{mz} + p_{ost}\text{, kde: } \\[3mm]  p_ú \text{ : pomerné náklady na údržbu,} \\[3mm]p_{mz} \text{ : pomerné náklady na mzdy,} \\[3mm] p_{ost} \text{ : ostatné stále prevádzkové náklady (dodávky, služby, réžia atď.),} \\[3mm] T_ž \text{ :  ekonomická životnosť DHM, takisto } \\[3mm] \text{pomerná anuita (umorovateľ) } a_{T_ž} = \frac{r^{T_ž} * (r-1)}{r^{T_ž}-1} \\[3mm] \text{a pomerné stále prevádzkové náklady }k'=p_ú + p_{mz} + p_{ost}.",
         "table": None,
         "code": "5* (0.1*1.05**3 + 0.15*1.05**2 + 0.25*1.05**1 + 0.4*1.05**0 + 0.1*1.05**-1)",
         "solutiontable": None
