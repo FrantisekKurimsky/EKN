@@ -134,9 +134,9 @@ math_problems_2 = [
     },
     {
         "question": "Stanovte aktualizované (prepočítané) investičné náklady, ak podľa súhrnného rozpočtu investičné náklady pre sledovanú stavbu elektrickej stanice  boli vo výške 5 mil. €. Počas  výstavby  Tv = 5 rokov boli investičné náklady čerpané takto (v percentách podľa jednotlivých rokov výstavby): 10, 15, 25, 40, 10 %. Výstavba bola skončená rok po uvedení stanice do prevádzky. Činiteľ času q = 1,05.",
-        "solution": r"\text{Ak čas výstavby presahuje termín uvedenia do prevádzky o } T_{\Delta} \text{ rokov, činiteľ má tvar  } q^{T_v-T_{\Delta}-t}, \text{ alebo } q^{k-T_{\Delta}-j} \\[5mm] N_{05} = 50 * 10^6 * 1.05 ^{5-2-1} = ",
+        "solution": "AHOJ \text{Celkové investičné náklady sú 5 mil. €, ktoré sú rozdelené podľa nasledujúcich percent: } \\[3mm] \text{rok 1: 10 \% = 0.10×5 mil. €} \\[3mm] \text{rok 2: 15\% = 0.15×5 mil. €} \\[3mm] \text{rok 3: 25\% = 0.25×5 mil. €} \\[3mm] \text{rok 4: 40\% = 0.40×5 mil. €} \\[3mm] \text{rok 5: 10 \% = 0.10×5 mil. €} \\[5mm] N_{05} = \sum_{t=1}^{5}{N_{0t}} * q^{T_v - t - T_{\Delta}} \\[3mm] N_{05} = 5*0.1*1.05^{5-1-1} + 5*0.15*1.05^{5-2-1} + 5*0.25*1.05^{5-3-1} + 5*0.4*1.05^{5-4-1} + 5*0.1*1.05^{5-5-1}\\[3mm] N_{05} = 5* (0.1*1.05^{3} + 0.15*1.05^{2} + 0.25*1.05^{1} + 0.4*1.05^{0} + 0.1*1.05^{-1}) \\[3mm] N_{05} = ",
         "table": None,
-        "code": "(50 * (10**6)) * (1.05**2)",
+        "code": "5* (0.1*1.05**3 + 0.15*1.05**2 + 0.25*1.05**1 + 0.4*1.05**0 + 0.1*1.05**-1)",
         "solutiontable": None
     },
 ]
