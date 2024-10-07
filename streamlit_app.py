@@ -1,7 +1,10 @@
 import streamlit as st
 from urllib.parse import urlencode, parse_qs
 import pandas as pd
-from problems import math_problems_1
+from problems import (
+    math_problems_1,
+    math_problems_2
+)
 
 st.set_page_config(layout="wide")
 st.sidebar.title("Menu")
@@ -12,20 +15,20 @@ def home_page():
 
 
     
-def first():
+def first(name, problems, number):
     
 
-    st.title("Cvičenie 1.")
+    st.title("name")
 
     slide_index = st.selectbox(
         "Príklad:",
-        list(range(len(math_problems_1))),
-        format_func=lambda x: f"Príklad: 1.{x+1}"
+        list(range(len(problems))),
+        format_func=lambda x: f"Príklad: {number}.{x+1}"
     )
     
     
     # Display the current math problem and solution
-    problem = math_problems_1[slide_index]
+    problem = problems[slide_index]
     
     st.write(problem["question"])
     if problem['table'] is not None:
@@ -46,4 +49,6 @@ def first():
 if pages == "Domov":
     home_page()
 elif pages == "Cvičenie 1.":
-    first()
+    first("Cvičenie 1.", math_problems_1, 1)
+elif pages == "Cvičenie 2.":
+    first("Cvičenie 2.", math_problems_2, 2)

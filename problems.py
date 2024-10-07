@@ -73,4 +73,20 @@ math_problems_1 = [
         "code": "(((1.06**10)*0.06)/((1.06**10) - 1)) * 2.3 * 10**6"
 
     },
+    {
+        "question": "Podnik má splatiť pôžičku 100000 € za 5 rokov pri úrokovej sadzbe 3,5 %. Vyhotovte umorovací plán platenia dlžoby! Výpočet realizujte a)	pre konštantnú anuitu, b)   pre konštantný úmor.",
+        "solution": r"\textbf{Umorovateľ} \text{ vyjadruje splácanie (umorovanie) pôžičky, resp. výpočet budúcich hodnôt} \\[3mm] \text{každoročných konštantných platieb zo súčasnej hodnoty pôžičky.} \\[3mm] \text{Určuje opakované splátky koncom n období zo súčasnej jednotkovej hodnoty (anuita zo súčasnej hodnoty} \\[3mm]\text{). Jeho výpočet je prevrátenou hodnotou zásobovateľa:} \\[3mm]a_n = \frac{r^n*(r-1)}{r^n-1} \\[6mm] A = \frac{r^{10}*(r-1)}{r^{10}-1}*K_0 \\[4mm] A = \frac{1.06^{10}*0.06}{1.06^{10}-1} * 2.3 * 10^6" ,
+        "table": None,
+        "code": "(((1.06**10)*0.06)/((1.06**10) - 1)) * 2.3 * 10**6"
+
+    },
+]
+
+math_problems_2 = [
+    {
+        "question": "Banka poskytuje 11 % ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?",
+        "solution": r"\text{základ úrokovania: } i=\frac{p}{100}, \\[5mm] p: \text{percentová úroková miera a } i: \text{úroková sadzba,} \\[5mm] \text{začiatočná hodnota kapitálu (istiny) : } K_0, \\[5mm] \text{dĺžka úrokového obdobia : } n, \\[5mm] u=K_0⋅i⋅n \\[5mm] \text{\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_\_} \\ \text{Jan, Feb, Mar, Apr, Maj, Jun, } \\[5mm] \text{30.Jun presne druhé švtrťročie, preto berieme do úvahy polovicu roka,}\\[5mm] \text{a teda polovicu z 11\% z 5000 €} \\[5mm] u = 5000 * 0.11 * \frac{1}{2} \\[5mm] u = \frac{550}{2} \\[5mm] u = 275",
+        "table": None,
+        "code": None
+    },
 ]
