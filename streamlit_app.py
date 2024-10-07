@@ -32,8 +32,15 @@ def first(name, problems, number):
     
     st.write(problem["question"])
     if problem['table'] is not None:
-        st.write(problem['table'])
-    
+        if problem['table']['a'] is not None:
+            st.write('a)')
+            st.write(problem['table'])
+        if problem['table']['b'] is not None:
+            st.write('b)')
+            st.write(problem['table'])
+        if isinstance(problem['table'], pd.DataFrame):
+            st.write(problem['table'])
+            
     with st.expander("Riešenie"):
         st.latex(problem["solution"])
 

@@ -75,8 +75,25 @@ math_problems_1 = [
     },
     {
         "question": "Podnik má splatiť pôžičku 100000 € za 5 rokov pri úrokovej sadzbe 3,5 %. Vyhotovte umorovací plán platenia dlžoby! Výpočet realizujte a)	pre konštantnú anuitu, b)   pre konštantný úmor.",
-        "solution": r"\textbf{Umorovateľ} \text{ vyjadruje splácanie (umorovanie) pôžičky, resp. výpočet budúcich hodnôt} \\[3mm] \text{každoročných konštantných platieb zo súčasnej hodnoty pôžičky.} \\[3mm] \text{Určuje opakované splátky koncom n období zo súčasnej jednotkovej hodnoty (anuita zo súčasnej hodnoty} \\[3mm]\text{). Jeho výpočet je prevrátenou hodnotou zásobovateľa:} \\[3mm]a_n = \frac{r^n*(r-1)}{r^n-1} \\[6mm] A = \frac{r^{10}*(r-1)}{r^{10}-1}*K_0 \\[4mm] A = \frac{1.06^{10}*0.06}{1.06^{10}-1} * 2.3 * 10^6" ,
-        "table": None,
+        "solution": None ,
+        "table": {
+            "a": pd.DataFrame({
+                "Úroková perióda": ["0", "1", "2", "3", "4", "5", "celkom"],
+                "Zvyšok dlžoby [€]": ["100000", "81350.00", "62047.25", "42068.91", "21391.32", "0.00", ""],
+                "Úroky [€]": ["-", "3500.00", "2847.25", "2171.66", "1472.41", "748.70", "10740.02"],
+                "Úmor [€]": ["-", "18650.00", "19302.75", "19978.34", "20677.59", "21391.32", "100000"],
+                "Splatené [€]": ["0", "18650.00", "37952.75", "57931.09", "78608.68", "100000.00", ""],
+                "Splatka": ["", "22150.00", "22150.00", "22150.00", "22150.00", "22140.02", ""]
+            }),
+            "b": pd.DataFrame({
+                    "Úroková perióda": ["0", "1", "2", "3", "4", "5", "celkom"],
+                    "Zvyšok dlžoby [€]": ["100000", "80000", "60000", "40000", "20000", "0", ""],
+                    "Úroky [€]": ["-", "3500", "2800", "2100", "1400", "700", "10500"],
+                    "Úmor [€]": ["-", "20000", "20000", "20000", "20000", "20000", "100000"],
+                    "Splatené [€]": ["0", "20000", "40000", "60000", "80000", "100000", ""],
+                    "Splátka[€]": ["-", "23500", "22800", "22100", "21400", "20700", ""]
+            }),
+        },
         "code": "(((1.06**10)*0.06)/((1.06**10) - 1)) * 2.3 * 10**6"
 
     },
