@@ -42,7 +42,8 @@ def first(name, problems, number):
             st.write(problem['table'])
 
     with st.expander("Riešenie"):
-        st.latex(problem["solution"])
+        if problem["solution"] is not None:
+            st.latex(problem["solution"])
 
         if problem['code'] is not None:
             example = problem['code']
