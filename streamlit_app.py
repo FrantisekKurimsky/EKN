@@ -8,7 +8,7 @@ from problems import (
 
 st.set_page_config(layout="wide")
 st.sidebar.title("Menu")
-pages = st.sidebar.radio("", ["Domov", "Cvičenie 1."])
+pages = st.sidebar.radio("", ["Domov", "Cvičenie 1.", "Cvičenie 2."])
 
 def home_page():
     st.title("Ekonomika v elektroenergetike")
