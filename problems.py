@@ -112,10 +112,10 @@ math_problems_1 = [
 
 math_problems_2 = [
     {
-        "question": "Banka poskytuje 11 % ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?",
-        "solution": None,
+        "question": "Ak sú tržby v 7. roku prevádzky  V7  = 100 mil. € a  q = 1,05, vtedy aktualizovaná hodnota uvedených tržieb k začiatku prvého roku prevádzky je ...",
+        "solution": r"z = \frac{\Delta{D_s}}{\Delta{P_s}} \\[3mm] z: \text{inkrementálny činiteľ času} \\[3mm] \Delta{D_s}: \text{prírastok  dôchodku za zvolený časový interval} \\[3mm] \Delta{P_s}: \text{prírastok vynaložených materiálnych prostriedkov na dosiahnutie prírastku dôchodku} \\[5mm] \text{Urýchlenie tržieb V o jeden rok predstavuje vzrast tejto tržby za tento rok na :} \\[3mm] V' = v(1+z) \\[3mm]\text{o dva roky : } V'' = V(1+z)^2 \\[3mm] \text{o n rokov : }  V''' = V(1+z)^n \\[5mm] \text{Urýchlenie tržieb V z k-teho na j-ty rok teda znamená, že táto tržba má v k-tom roku hodnotu: } V_{kj} = v_j (1+z)^{k-j} \\[3mm] V_{kj} \text{ je tržba j-teho roku prepočítaná na k-ty rok} \\[3mm] V_j \text{je tržba v j-tom roku.} \\[5mm] \text{Podobne ako v  bankovníctve, kde výraz r = 1+ i  sa označuje názvom úročiteľ, možno zaviesť pre ďalší výklad symbol: } \\[3mm] q = 1+z. \\ \text{\_\_\_\_} \\[5mm] V_0 = 10^8 * 1.05^{0-7} = ",
         "table": None,
-        "code": None,
+        "code": 10**8 * 1.05 ** (-7),
         "solutiontable": None
     },
 ]
