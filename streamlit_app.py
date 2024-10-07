@@ -32,10 +32,10 @@ def first(name, problems, number):
     
     st.write(problem["question"])
     if problem['table'] is not None:
-        if problem['table']['a'] is not None:
+        if 'a' in problem['table']:
             st.write('a)')
             st.write(problem['table']['a'])
-        if problem['table']['b'] is not None:
+        if 'b' in problem['table']:
             st.write('b)')
             st.write(problem['table']['b'])
         if isinstance(problem['table'], pd.DataFrame):
