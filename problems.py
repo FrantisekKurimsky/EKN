@@ -139,4 +139,11 @@ math_problems_2 = [
         "code": "5* (0.1*1.05**3 + 0.15*1.05**2 + 0.25*1.05**1 + 0.4*1.05**0 + 0.1*1.05**-1)",
         "solutiontable": None
     },
+    {
+        "question": "Stanovte ročnú kvótu pre variant výstavby elektrárne s výkonom 2 x 500 MW, ak ročné úroky sú 5% , ekonomická životnosť elektrárne je 25 rokov, pomerné náklady na údržbu  p_ú  =  0,04 / rok, pomerné náklady na mzdy  p_mz  =  0,008 / rok a ostatné pomerné náklady post  = 0.002 / rok.",
+        "solution": r"\textbf{Pomerné stále náklady, tzv. ročná kvóta} \\[3mm] \text{Vyjadruje prepočet stálych nákladov (investičných a prevádzkových) na jeden priemerný rok životnosti investície} \\[3mm] \frac{r^{T_ž} * (r-1)}{r^{T_ž}-1} + p_ú + p_{mz} + p_{ost}",
+        "table": None,
+        "code": "5* (0.1*1.05**3 + 0.15*1.05**2 + 0.25*1.05**1 + 0.4*1.05**0 + 0.1*1.05**-1)",
+        "solutiontable": None
+    },
 ]
