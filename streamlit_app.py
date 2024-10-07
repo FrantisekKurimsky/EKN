@@ -49,6 +49,16 @@ def first(name, problems, number):
             result = eval(example)
             # st.write(example)
             st.latex(str(result))
+        
+        if problem['solutiontable'] is not None:
+            if problem['solutiontable']['a'] is not None:
+                st.write('a)')
+                st.write(problem['solutiontable']['a'])
+            if problem['solutiontable']['b'] is not None:
+                st.write('b)')
+                st.write(problem['solutiontable']['b'])
+            if isinstance(problem['solutiontable'], pd.DataFrame):
+                st.write(problem['solutiontable'])
 
 
 
