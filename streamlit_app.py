@@ -18,7 +18,7 @@ def home_page():
 def first(name, problems, number):
     
 
-    st.title("name")
+    st.title(name)
 
     slide_index = st.selectbox(
         "Príklad:",
