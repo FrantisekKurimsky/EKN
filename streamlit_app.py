@@ -34,13 +34,13 @@ def first(name, problems, number):
     if problem['table'] is not None:
         if problem['table']['a'] is not None:
             st.write('a)')
-            st.write(problem['table'])
+            st.write(problem['table']['a'])
         if problem['table']['b'] is not None:
             st.write('b)')
-            st.write(problem['table'])
+            st.write(problem['table']['b'])
         if isinstance(problem['table'], pd.DataFrame):
             st.write(problem['table'])
-            
+
     with st.expander("Riešenie"):
         st.latex(problem["solution"])
 
