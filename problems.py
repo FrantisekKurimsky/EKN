@@ -125,4 +125,11 @@ math_problems_2 = [
         "code": "(50 * (10**6)) * (1.05**4)",
         "solutiontable": None
     },
+    {
+        "question": "Čas výstavby presahuje o 2 roky rok uvedenia do prevádzky. Výslednú aktualizovanú hodnotu nákladov z predošlého príkladu vyjadruje vzťah",
+        "solution": r"AHOJ \text{Ak čas výstavby presahuje termín uvedenia do prevádzky o } T_{\Delta} \text{ rokov, činiteľ má tvar  } q^{T_v-T_{\Delta}-t}, \text{ alebo } q^{k-T_{\Delta}-j} \\[5mm] N_{05} = 50 * 10^6 * 1.05 ^{5-2-1} = ",
+        "table": None,
+        "code": "(50 * (10**6)) * (1.05**3)",
+        "solutiontable": None
+    },
 ]
