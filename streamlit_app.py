@@ -48,7 +48,8 @@ def first(name, problems, number):
             example = problem['code']
             result = eval(example)
             # st.write(example)
-            st.latex(str(result))
+            if result is not None:
+                st.latex(str(result))
         
         if problem['solutiontable'] is not None:
             if problem['solutiontable']['a'] is not None:
