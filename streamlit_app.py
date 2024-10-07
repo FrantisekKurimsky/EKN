@@ -53,10 +53,10 @@ def first(name, problems, number):
                 st.latex(str(result))
         
         if problem['solutiontable'] is not None:
-            if problem['solutiontable']['a'] is not None:
+            if 'a' in problem['solutiontable']:
                 st.write('a)')
                 st.write(problem['solutiontable']['a'])
-            if problem['solutiontable']['b'] is not None:
+            if 'b' in problem['solutiontable']:
                 st.write('b)')
                 st.write(problem['solutiontable']['b'])
             if isinstance(problem['solutiontable'], pd.DataFrame):
