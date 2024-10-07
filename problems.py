@@ -148,7 +148,7 @@ math_problems_2 = [
     },
     {
         "question": "Vypočítajte náklady na výrobu elektrickej energie v elektrárni, ak merné investičné náklady na jej výstavbu N_iE = 4300 €.kW-1, inštalovaný výkon P_i = 700 MW, čas využitia  pi=6000 h/rok, merné pohyblivé náklady n_p = 0,13 €.kW/h, kvóta k= 0,15 /rok.",
-        "solution": r"AHOJ N_{vr} = N_{st} + N_{po} = P_m * n_{st} + A*(n_{st} + \pi n_{po})",
+        "solution": r"AHOJ N_{vr} = N_{st} + N_{po} = P_m * n_{st} + A*(n_{st} + \tau n_{po}) \text{ , kde: } \\[3mm] N_{vr} \text{ ročné výrobné náklady dodávky energie,} \\[3mm] N_{st} \text{ stála zložka ročných výrobných nákladov, }\\[3mm] N_{po} \text{ pohyblivá zložka ročných výrobných nákladov, }\\[3mm] P_m { maximálny ročný výkon (zaťaženie) MW, }\\[3mm] A \text{ množstvo vyrobenej energie (MWh), }\\[3mm], n_{st} \text{ stála zložka pomerných nákladov €.MW}^{-1}.\text{rok}^{-1}\\[3mm] n_{po} \text{ pohyblivá zložka pomerných nákladov €.MWh}^{-1}.\text{rok}^{-1}} \\[3mm] \tau \text{ ročné využitie maximálneho výkonu.}",
         "table": None,
         "code": "(((1.05**25) * (0.05)) / ((1.05**25)-1)) + 0.04 + 0.008 + 0.002",
         "solutiontable": None
