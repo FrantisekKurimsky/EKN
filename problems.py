@@ -167,4 +167,20 @@ math_problems_2 = [
         "code": None,
         "solutiontable": None
     },
+    {
+        "question": "Očakávané ročné cash flow sú 25 000 tis. € počas štyroch rokov. Nech je miera inflácie  6 % a cena kapitálu na finančnom trhu  (úroková miera pre diskontovanie) 15 %. Aká je súčasná hodnota cash flow (SH CF) po zohľadnení inflácie?",
+        "solution": r"\text{a) Riešenie cez nominálnu sadzbu: } \\[3mm] \text{Najprv zohľadníme 6% infláciu úročením očakávaných cash flow (CF)} \\[3mm] \text{a potom jednotlivé CF diskontujeme, aby sme získali ich súčasnú hodnotu.}",
+        "table": None,
+        "code": None,
+        "solutiontable": {
+            "a": pd.DataFrame({
+                "rok": ["", "1.", "2.", "3.", "4.", "spolu"],
+                "cash flow": ["(očakávané)", "25000", "25000", "25000", "25000", "100000"],
+                "inflácia": ["(úročenie)", "(1+0,06)1", "(1+0,06)2", "(1+0,06)3", "(1+0,06)4", "-"],
+                "cash flow": ["(s infláciou)", "26 500", "28 090", "29 775", "31 562", "115 927"],
+                "disk.sadzba": ["15 %", "0,8696", "0,7561", "0,6575", "0,5718", "-"],
+                "SHCF": ["", "23 044", "21 239", "19 577", "18 047", "81 908"]
+            })
+        }
+    },
 ]
