@@ -155,7 +155,14 @@ math_problems_2 = [
     },
     {
         "question": "Stanovte merné náklady na výrobu elektriny v elektrárni z predošlého príkladu.",
-        "solution": r"AHOJ n_v = \frac{N_v}{A} = \frac{N_v}{P_i * \tau} \\[3mm] n_v = \frac{997.5 * 10^6}{700*10^3*6000} = €kWh^{-1} \\[3mm] n_v = ",
+        "solution": r"n_v = \frac{N_v}{A} = \frac{N_v}{P_i * \tau} \\[3mm] n_v = \frac{997.5 * 10^6}{700*10^3*6000} €kWh^{-1} \\[3mm] n_v = ",
+        "table": None,
+        "code": "(997.5 * (10**6)) / (700*(10**3)*6000)",
+        "solutiontable": None
+    },
+    {
+        "question": "Porovnajte merné náklady na výrobu elektriny v parnej elektrárni pri časoch využitia inštalovaného výkonu  tau_1  =  6000 h.rok^-1  a tau_2  =  4000 h.rok^-1, ak merné investičné náklady elektrárne N_i  =  5100  €.kW^-1, ekonomická životnosť T_ž  =  30 rokov, merná spotreba tepla     Q_t  =  11,2 MJ.kWh^-1,  cena paliva c_pal  =  12 €.GJ^-1, ostatné stále a pohyblivé náklady odhadneme prirážkou 10% z nákladov na investície a palivo; ročné úroky sú 5%, pomerné náklady na opravu a údržbu 4%.",
+        "solution": r"AHOJ n_v = \frac{N_v}{A} = \frac{N_v}{P_i * \tau} \\[3mm] n_v = \frac{997.5 * 10^6}{700*10^3*6000} €kWh^{-1} \\[3mm] n_v = ",
         "table": None,
         "code": "(997.5 * (10**6)) / (700*(10**3)*6000)",
         "solutiontable": None
