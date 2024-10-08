@@ -169,7 +169,7 @@ math_problems_2 = [
     },
     {
         "question": "Očakávané ročné cash flow sú 25 000 tis. € počas štyroch rokov. Nech je miera inflácie  6 % a cena kapitálu na finančnom trhu  (úroková miera pre diskontovanie) 15 %. Aká je súčasná hodnota cash flow (SH CF) po zohľadnení inflácie?",
-        "solution": r"\text{a) Riešenie cez nominálnu sadzbu: } \\[3mm] \text{Najprv zohľadníme 6% infláciu úročením očakávaných cash flow (CF)} \\[3mm] \text{a potom jednotlivé CF diskontujeme, aby sme získali ich súčasnú hodnotu.}",
+        "solution": r"\text{a) Riešenie cez nominálnu sadzbu: } \\[3mm] \text{Najprv zohľadníme 6\% infláciu úročením očakávaných cash flow (CF)} \\[3mm] \text{a potom jednotlivé CF diskontujeme, aby sme získali ich súčasnú hodnotu.}",
         "table": None,
         "code": None,
         "solutiontable": {
