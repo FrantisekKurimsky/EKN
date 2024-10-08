@@ -155,7 +155,7 @@ math_problems_2 = [
     },
     {
         "question": "Stanovte merné náklady na výrobu elektriny v elektrárni z predošlého príkladu.",
-        "solution": r"n_v = \frac{N_v}{A} = \frac{N_v}{P_i * \tau} \\[3mm] n_v = \frac{997.5 * 10^6}{700*10^3*6000} = €kWh^{-1} \\[3mm] n_v = ",
+        "solution": r"AHOJ n_v = \frac{N_v}{A} = \frac{N_v}{P_i * \tau} \\[3mm] n_v = \frac{997.5 * 10^6}{700*10^3*6000} = €kWh^{-1} \\[3mm] n_v = ",
         "table": None,
         "code": "(997.5 * (10**6)) / (700*(10**3)*6000)",
         "solutiontable": None
