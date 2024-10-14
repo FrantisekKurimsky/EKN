@@ -244,7 +244,7 @@ math_problems_3 = [
     },
     {
         "question": "Podnik má možnosť investovať do jedného z dvoch investičných projektov. Pravdepodobnosť (P_x) získania čistých peňažných príjmov za rovnaké obdobie je v tabuľke.  \nVyberte lepší investičný projekt na základe určenia štandardnej odchýlky od očakávanej priemernej hodnoty CF.",
-        "solution": r"\text{Očakávaná priemerná hodnota CF sa vypočíta ako vážený priemer jednotlivých CF} \\[3mm] \text{a váhami sú pravdepodobnosti jednotlivých možností CF. \\[3mm]\text{Súčet váh (pravdepodobností) sa rovná jednej. \\[3mm]\text{Pri symetrickom rozdelení pravdepodobnosti, tzv. normálnom rozdelení, sa očakávané CF zhoduje so stredom tohto rozdelenia.} \\[3mm] \bar{A} = \sum_{x=1}^nA_xP_x \\[3mm]",
+        "solution": r"\text{Očakávaná priemerná hodnota CF sa vypočíta ako vážený priemer jednotlivých CF} \\[3mm] \text{a váhami sú pravdepodobnosti jednotlivých možností CF.} \\[3mm] \text{Súčet váh (pravdepodobností) sa rovná jednej.} \\[3mm] \text{Pri symetrickom rozdelení pravdepodobnosti, tzv. normálnom rozdelení, sa očakávané CF zhoduje so stredom tohto rozdelenia.} \\[3mm] \bar{A} = \sum_{x=1}^n A_xP_x \\[3mm]",
         "table": pd.DataFrame({
             "- ": ["Projekt A", "", "Projekt B", ""],
             "-  ": ["P_x", "CF tis. €", "P_x", "CF  tis. €"],
