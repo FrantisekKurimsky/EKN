@@ -187,75 +187,11 @@ math_problems_2 = [
 
 math_problems_3 = [
     {
-        "question": "Ak sú tržby v 7. roku prevádzky  V7  = 100 mil. € a  q = 1,05, vtedy aktualizovaná hodnota uvedených tržieb k začiatku prvého roku prevádzky je ...",
-        "solution": r"z = \frac{\Delta{D_s}}{\Delta{P_s}} \\[3mm] z: \text{inkrementálny činiteľ času} \\[3mm] \Delta{D_s}: \text{prírastok  dôchodku za zvolený časový interval} \\[3mm] \Delta{P_s}: \text{prírastok vynaložených materiálnych prostriedkov na dosiahnutie prírastku dôchodku} \\[5mm] \text{Urýchlenie tržieb V o jeden rok predstavuje vzrast tejto tržby za tento rok na :} \\[3mm] V' = v(1+z) \\[3mm]\text{o dva roky : } V'' = V(1+z)^2 \\[3mm] \text{o n rokov : }  V''' = V(1+z)^n \\[5mm] \text{Urýchlenie tržieb V z k-teho na j-ty rok teda znamená, že táto tržba má v k-tom roku hodnotu: } V_{kj} = v_j (1+z)^{k-j} \\[3mm] V_{kj} \text{ je tržba j-teho roku prepočítaná na k-ty rok} \\[3mm] V_j \text{ je tržba v j-tom roku.} \\[5mm] \text{Podobne ako v  bankovníctve, kde výraz r = 1 + i  sa označuje názvom úročiteľ, možno zaviesť pre ďalší výklad symbol: } \\[3mm] q = 1+z. \\ \text{\_\_\_\_} \\[5mm] V_p = 10^8 * 1.05^{0-7} = ",
+        "question": "Ekonomická životnosť posudzovaného variantu  T_ž  = 8 rokov. V rokoch t = 1, 2, 3, 4 a 5 je zisk Z_t  = 5 mil. €, v rokoch 6. a 7. je 6 mil. € a v 8. roku je zisk 7 mil. €. Vypočítajte aktualizovaný a priemerný ročný zisk, ak  q = 1,05.",
+        "solution": r"\text{Aktualizovný zisk pre 8 rokov, diskontácia} \\[3mm] Z_p = 5*(1,05^{-1} + 1,05^{-2} + 1,05^{-3} + 1,05^{-4} + 1,05^{-5}) + 6* (1.05^{-6} + 1.05 ^ {-7}) + 7*1.05^{-8} = 35.12368 mil. \€",
         "table": None,
         "code": "(10**8) * (1.05 ** (-7))",
         "solutiontable": None
     },
-    {
-        "question": "Ak boli investičné náklady v prvom roku výstavby Ni1 = 50 mil. € a  q = 1,05, ich aktualizovaná hodnota k začiatku prvého roku prevádzky pri čase výstavby Tv = 5 rokov je",
-        "solution": r"\text{Podobne možno použiť metódu zloženého úrokovania pre prepočty nákladov a ziskov podľa :} \\[3mm] N_{kj} = N_jq^{k-j} \\[3mm] N_{kj} \text{ sú náklady j-teho roku prepočítané na k-ty rok, } \\[3mm] N_j \text{ sú náklady j-teho roku} \\[3mm]N_{ip}=N_{it}q^{T_v-T_{\Delta}-t} \\ \text{\_\_\_} \\[5mm] q^{T_v-T_{\Delta}-t} = (1+z)^{5-0-1} \\[3mm] N_{ip} = N_{i1} * 1.05^{5-1} = 50 * 10^6 * 1.05^{5-1} = ",
-        "table": None,
-        "code": "(50 * (10**6)) * (1.05**4)",
-        "solutiontable": None
-    },
-    {
-        "question": "Čas výstavby presahuje o 2 roky rok uvedenia do prevádzky. Výslednú aktualizovanú hodnotu nákladov z predošlého príkladu vyjadruje vzťah",
-        "solution": r"\text{Ak čas výstavby presahuje termín uvedenia do prevádzky o } T_{\Delta} \text{ rokov, činiteľ má tvar  } q^{T_v-T_{\Delta}-t}, \\[5mm] N_{ip}=N_{it}q^{T_v-T_{\Delta}-t} \\[3mm] N_{ip} = 50 * 10^6 * 1.05 ^{5-2-1} = ",
-        "table": None,
-        "code": "(50 * (10**6)) * (1.05**2)",
-        "solutiontable": None
-    },
-    {
-        "question": "Stanovte aktualizované (prepočítané) investičné náklady, ak podľa súhrnného rozpočtu investičné náklady pre sledovanú stavbu elektrickej stanice  boli vo výške 5 mil. €. Počas  výstavby  Tv = 5 rokov boli investičné náklady čerpané takto (v percentách podľa jednotlivých rokov výstavby): 10, 15, 25, 40, 10 %. Výstavba bola skončená rok po uvedení stanice do prevádzky. Činiteľ času q = 1,05.",
-        "solution": r"\text{Celkové investičné náklady sú 5 mil. €, ktoré sú rozdelené podľa nasledujúcich percent: } \\[3mm] \text{rok 1: 10 \% = 0.10×5 mil. €} \\[3mm] \text{rok 2: 15\% = 0.15×5 mil. €} \\[3mm] \text{rok 3: 25\% = 0.25×5 mil. €} \\[3mm] \text{rok 4: 40\% = 0.40×5 mil. €} \\[3mm] \text{rok 5: 10 \% = 0.10×5 mil. €} \\[5mm] \textbf{Prepočítané (aktualizované) investičné náklady }\\[3mm] N_{ip} = \sum_{t=1}^{T_v}{N_{it} q^{T_v - T_{\Delta}-t}} \\[3mm] N_{ip} = \sum_{t=1}^{5}{N_{it}} * q^{5 - 1 - t} \\[3mm] N_{ip} = 5*0.1*1.05^{5-1-1} + 5*0.15*1.05^{5-2-1} + 5*0.25*1.05^{5-3-1} + 5*0.4*1.05^{5-4-1} + 5*0.1*1.05^{5-5-1}\\[3mm] N_{ip} = 5* (0.1*1.05^{3} + 0.15*1.05^{2} + 0.25*1.05^{1} + 0.4*1.05^{0} + 0.1*1.05^{-1}) \\[3mm] N_{ip} = ",
-        "table": None,
-        "code": "5* (0.1*1.05**3 + 0.15*1.05**2 + 0.25*1.05**1 + 0.4*1.05**0 + 0.1*1.05**-1)",
-        "solutiontable": None
-    },
-    {
-        "question": "Stanovte ročnú kvótu pre variant výstavby elektrárne s výkonom 2 x 500 MW, ak ročné úroky sú 5% , ekonomická životnosť elektrárne je 25 rokov, pomerné náklady na údržbu  p_ú  =  0,04 / rok, pomerné náklady na mzdy  p_mz  =  0,008 / rok a ostatné pomerné náklady post  = 0.002 / rok.",
-        "solution": r"\textbf{Pomerné stále náklady, tzv. ročná kvóta} \\[3mm] \text{Vyjadruje prepočet stálych nákladov (investičných a prevádzkových) na jeden priemerný rok životnosti investície} \\[3mm] k = \frac{r^{T_ž} * (r-1)}{r^{T_ž}-1} + p_ú + p_{mz} + p_{ost}\text{, kde: } \\[3mm]  p_ú \text{ : pomerné náklady na údržbu,} \\[3mm]p_{mz} \text{ : pomerné náklady na mzdy,} \\[3mm] p_{ost} \text{ : ostatné stále prevádzkové náklady (dodávky, služby, réžia atď.),} \\[3mm] T_ž \text{ :  ekonomická životnosť DHM, takisto } \\[3mm] \text{pomerná anuita (umorovateľ) } a_{T_ž} = \frac{r^{T_ž} * (r-1)}{r^{T_ž}-1} \\[3mm] \text{a pomerné stále prevádzkové náklady }k'=p_ú + p_{mz} + p_{ost}. \\ \text{\_\_\_} \\[3mm] k = \frac{1.05^{25} * (1-1.05)}{1.05^{25}-1} + 0.04 + 0.008 + 0.002 \text{ / rok}",
-        "table": None,
-        "code": "(((1.05**25) * (0.05)) / ((1.05**25)-1)) + 0.04 + 0.008 + 0.002",
-        "solutiontable": None
-    },
-    {
-        "question": "Vypočítajte náklady na výrobu elektrickej energie v elektrárni, ak merné investičné náklady na jej výstavbu N_i = 4300 €.kW-1, inštalovaný výkon P_i = 700 MW, čas využitia  tau=6000 h/rok, merné pohyblivé náklady n_p = 0,13 €.kW/h, kvóta k= 0,15 /rok.",
-        "solution": r"N_{vr} = N_{st} + N_{po} = P_m * n_{st} + A*n_{po} = P_m *(n_{st} + \tau n_{po}) \text{ , kde: } \\[3mm] N_{vr} \text{ - ročné výrobné náklady dodávky energie,} \\[3mm] N_{st} \text{ - stála zložka ročných výrobných nákladov, }\\[3mm] N_{po} \text{ - pohyblivá zložka ročných výrobných nákladov, }\\[3mm] P_m \text{ - maximálny ročný výkon (zaťaženie) MW, }\\[3mm] A \text{ - množstvo vyrobenej energie (MWh), }\\[3mm] n_{st} \text{ - stála zložka pomerných nákladov €.MW}^{-1}.\text{rok}^{-1}, k^1 * N_i\\[3mm] n_{po} \text{ - pohyblivá zložka pomerných nákladov €.MWh}^{-1}.\text{rok}^{-1} \\[3mm] \tau \text{ - ročné využitie maximálneho výkonu.}\\[5mm] N_{vr} = 700 *10^3 * (0.15 * 4300 + 0.13 * 6000) = ",
-        "table": None,
-        "code": "700 *10**3  * (0.15 * 4300 + 0.13 * 6000)",
-        "solutiontable": None
-    },
-    {
-        "question": "Stanovte merné náklady na výrobu elektriny v elektrárni z predošlého príkladu.",
-        "solution": r"n_v = \frac{N_v}{A} = \frac{N_v}{P_i * \tau} \\[3mm] n_v = \frac{997.5 * 10^6}{700*10^3*6000} €kWh^{-1} \\[3mm] n_v = ",
-        "table": None,
-        "code": "(997.5 * (10**6)) / (700*(10**3)*6000)",
-        "solutiontable": None
-    },
-    {
-        "question": "Porovnajte merné náklady na výrobu elektriny v parnej elektrárni pri časoch využitia inštalovaného výkonu  tau_1  =  6000 h.rok^-1  a tau_2  =  4000 h.rok^-1, ak merné investičné náklady elektrárne N_i  =  5100  €.kW^-1, ekonomická životnosť T_ž  =  30 rokov, merná spotreba tepla     Q_t  =  11,2 MJ.kWh^-1,  cena paliva c_pal  =  12 €.GJ^-1, ostatné stále a pohyblivé náklady odhadneme prirážkou 10% z nákladov na investície a palivo; ročné úroky sú 5%, pomerné náklady na opravu a údržbu 4%.",
-        "solution": r"\text{Náklady na palivo : } \\[3mm] n_{pal} = Q_t * c_{pal} = 11.2 * 10^{-3} * 12 = 0.1344 €*kWh^{-1} \\[3mm] \text{ročná kvóta : }\\[3mm] k = \frac{1}{T_ž} + p_a + p_ú + p_{mz} + p_{ost},    p_a \thickapprox 0.03 \\[3mm] k = \frac{1}{30} + 0.03 + 0.04 = 0.103 \\[3mm] \text{merné náklady : } \\[3mm] n_v =(\frac{n_{st}}{\tau} + n_{pal}) * (1 + 0.1) \\[3mm] n_v = (\frac{k*N_i}{\tau} + n_{pal}) * 1.1 \\[3mm] n_v = (\frac{0.103 * 5100}{\tau} + 0.1344) *1.1 \\[3mm] n_{v1} = (\frac{525.3}{6000} + 0.1344) * 1.1  = 0.244145 €.kWh^{-1} \\[3mm] n_{v2} = (\frac{525.3}{4000} + 0.1344) * 1.1 = 0.2922975 €.kWh^{-1} \\[3mm] n_{v1} < n_{v2}",
-        "table": None,
-        "code": None,
-        "solutiontable": None
-    },
-    {
-        "question": "Očakávané ročné cash flow sú 25 000 tis. € počas štyroch rokov. Nech je miera inflácie  6 % a cena kapitálu na finančnom trhu  (úroková miera pre diskontovanie) 15 %. Aká je súčasná hodnota cash flow (SH CF) po zohľadnení inflácie?",
-        "solution": r" \text{a) Riešenie cez nominálnu sadzbu: } \\[3mm] \text{Najprv zohľadníme 6\% infláciu úročením očakávaných cash flow (CF)} \\[3mm] \text{a potom jednotlivé CF diskontujeme, aby sme získali ich súčasnú hodnotu.} \\[5mm] \text{b) Prepočet cez reálnu úrokovú mieru:} \\[3mm] i_r = \frac{i-m}{1+m} = \frac{0.15-0.06}{1+0.06} = 0.085 \\[3mm] \text{Reálna úroková sadzba je 8,5 \%.} \\[5mm] \text{výpočet SHCF pomocou zásobiteľa : } \\[3mm] z_4 = \frac{(1+0.085)^4 - 1}{(1 + 0.085)^4 * 0.085} = 3.2756 \\[3mm] \text{Súčasná hodnota CF pre 8,5 \%  je: } \\[3mm] 25000 * z_4 = 25000 * 3.2756 = 81890 \text{tis. €}",
-        "table": None,
-        "code": None,
-        "solutiontable": {
-            "a": pd.DataFrame({
-                "rok": ["", "1.", "2.", "3.", "4.", "spolu"],
-                "cash flow": ["(očakávané)", "25000", "25000", "25000", "25000", "100000"],
-                "inflácia": ["(úročenie)", "(1+0,06)1", "(1+0,06)2", "(1+0,06)3", "(1+0,06)4", "-"],
-                "cash flow": ["(s infláciou)", "26 500", "28 090", "29 775", "31 562", "115 927"],
-                "disk.sadzba": ["15 %", "0,8696", "0,7561", "0,6575", "0,5718", "-"],
-                "SHCF": ["", "23 044", "21 239", "19 577", "18 047", "81 908"]
-            })
-        }
-    },
+    
 ]
