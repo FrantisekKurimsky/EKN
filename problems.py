@@ -200,5 +200,11 @@ math_problems_3 = [
         "code": None,
         "solutiontable": None
     },
-    
+    {
+        "question": "Výber z dvoch investičných projektov s rovnakými kapitálovými výdavkami. Očakávané CF sú počas rovnakej doby životnosti rozložené v čase inak v Projekte 1 a inak v Projekte 2.  \na) Vypočítajte čistú súčasnú hodnotu každého projektu NPV, pre úrokovú sadzbu 10% a vyberte výhodnejší projekt.  \nb) Vypočítajte dobu úhrady projektov bez aktualizácie času a s aktualizáciou času.",
+        "solution": r"\text{Pri životnosti 8 a 10 rokov ja najmenší spoločný násobok } Tp  = 40 \text{ rokov, }\\[3mm]\text{ pričom v } T_p \text{ sa }T_{ž1}\text{ cyklicky opakuje 5 - krát a }T_{ž2} \text{ 4 - krát. } \\[3mm] \text{Vtedy aktualizovaný zisk v celom čase porovnania }T_p\text{  pre uvedené varianty bude takýto: } \\[3mm] Z_{p1,40} = 35.1268  * (1 + 1.05^{-8} + 1.05^{-16} + 1.05^{-24} + 1.05^{-32} ) = 93.2576\text{mil. €} \\[3mm] Z_{p2,40} = 38.1452 * (1 + 1.05^{-10} + 1.05^{-20} + 1.05^{-30}) = 84.7655\text{ mil €} \\[3mm] \text{Cez priemerný ročný zisk: }\\[3mm] Z_{\Phi 1} = 35.1268 * \frac{q^8*(q-1)}{q*8-1} = 35.1268 * \frac{1.05^8*(0.05)}{1.05*8-1} = 5.4349\text{ mil. €} \\[3mm]Z_{\Phi 2} = 38.1452 * \frac{q^{10}*(q-1)}{q*{10}-1} = 38.1452 * \frac{1.05^{10}*(0.05)}{1.05*{10}-1} = 4.9390\text{ mil. €} \\[5mm] \text{V obidvoch prípadoch vidieť, že } Z_{p1,40}  \gt Z_{p2, 40} \text{ , ako aj } Z_{\Phi 1} \gt Z_{\Phi 2} \text{ , teda prvý variant je z hľadiska tvorby zisku výhodnejší. }",
+        "table": None,
+        "code": None,
+        "solutiontable": None
+    },
 ]
