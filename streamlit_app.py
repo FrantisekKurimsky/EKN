@@ -3,7 +3,8 @@ from urllib.parse import urlencode, parse_qs
 import pandas as pd
 from problems import (
     math_problems_1,
-    math_problems_2
+    math_problems_2,
+    math_problems_3
 )
 
 st.set_page_config(layout="wide")
@@ -72,4 +73,4 @@ elif pages == "Cvičenie 1.":
 elif pages == "Cvičenie 2.":
     first("Cvičenie 2.", math_problems_2, 2)
 elif pages == "Cvičenie 3.":
-    first("Cvičenie 3.", math_problems_2, 2)
+    first("Cvičenie 3.", math_problems_3, 3)
