@@ -42,7 +42,9 @@ def first(name, problems, number):
         if isinstance(problem['table'], pd.DataFrame):
             st.write(problem['table'])
     if "video" in problem:
-        st.video(problem['video'])
+        col1, col2, col3 = st.columns([1, 2, 3])
+        with col3:
+            st.video(problem['video'])
 
     with st.expander("Riešenie"):
         if problem["solution"] is not None:
