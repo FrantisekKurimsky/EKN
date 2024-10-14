@@ -195,7 +195,7 @@ math_problems_3 = [
     },
     {
         "question": "Použitím údajov z predošlého príkladu porovnajme dve alternatívy s odlišnou životnosťou. Prvému variantu na základe výpočtu zodpovedá aktualizovaný zisk ZpI = 35,1268 mil. €, pri TžI = 8 rokov. Predpokladajme aktualizovaný zisk druhého variantu pri ekonomickej životnosti TžII = 10 rokov ZpII = 38,1452 mil. €.",
-        "solution": r" AHOJ \text{Pri životnosti 8 a 10 rokov ja najmenší spoločný násobok} Tp  = 40 \text{rokov, }\\[3mm]\text{ pričom v } Tp \text{ sa }T_{ž1}\text{} cyklicky opakuje 5 - krát a }T_{ž2} \text{ 4 - krát. } \\[3mm] \text{Vtedy aktualizovaný zisk v celom čase porovnania }T_p\text{  pre uvedené varianty bude takýto: } \\[3mm] Z_{p1 40} = 35.1268  * (1 + 1.05^{-8} + 1.05^{-16} + 1.05^{-24} + 1.05^{-32} ) = 93.2576\text{mil. €} \\[3mm] Z_{p2 40} = 38.1452 * (1 + 1.05^{-10} + 1.05^{-20} + 1.05^{-30} = 84.7655\text{ mil €})",
+        "solution": r"\text{Pri životnosti 8 a 10 rokov ja najmenší spoločný násobok} Tp  = 40 \text{rokov, }\\[3mm]\text{ pričom v } Tp \text{ sa }T_{ž1}\text{} cyklicky opakuje 5 - krát a }T_{ž2} \text{ 4 - krát. } \\[3mm] \text{Vtedy aktualizovaný zisk v celom čase porovnania }T_p\text{  pre uvedené varianty bude takýto: } \\[3mm] Z_{p1 40} = 35.1268  * (1 + 1.05^{-8} + 1.05^{-16} + 1.05^{-24} + 1.05^{-32} ) = 93.2576\text{mil. €} \\[3mm] Z_{p2 40} = 38.1452 * (1 + 1.05^{-10} + 1.05^{-20} + 1.05^{-30} = 84.7655\text{ mil €})",
         "table": None,
         "code": "(10**8) * (1.05 ** (-7))",
         "solutiontable": None
