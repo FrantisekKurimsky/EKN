@@ -243,7 +243,7 @@ math_problems_3 = [
         "solutiontable": None
     },
     {
-        "question": "Podnik má možnosť investovať do jedného z dvoch investičných projektov. Pravdepodobnosť (P_x) získania čistých peňažných príjmov za rovnaké obdobie je v tabuľke",
+        "question": "Podnik má možnosť investovať do jedného z dvoch investičných projektov. Pravdepodobnosť (P_x) získania čistých peňažných príjmov za rovnaké obdobie je v tabuľke.  \nVyberte lepší investičný projekt na základe určenia štandardnej odchýlky od očakávanej priemernej hodnoty CF",
         "solution": r" \text{Vzhľadom na to, že porovnávané varianty majú rovnakú ročnú tržbu aj} \\[3mm] \text{konštantné ročné prevádzkové náklady, možno použiť kritérium minimálnych aktualizovaných nákladov:} \\[3mm] N_{vr} = N_{pr} + k_f * N_{ip} = min \\[3mm] k_f = \frac{q^{T_ž} * (q - 1)}{q^{T_ž} - 1} \\[3mm] k_f = \frac{1.1^6 - 0.1}{1.1^6 -1} = 0.22961 \\[3mm] N_{vr, 1} = 2.8 + 0.22961*6 = 4.18 \text{ mil.}\\[3mm] N_{vr, 2} = 0.93 + 0.22961*12.4 = 3.78 \text{ mil.} \\[3mm] \text{Aktualizované výrobné náklady variantu 2. sú nižšie, preto je ekonomicky efektívnejší.} \\[5mm] \text{V prípade použitia odporúčaného kritéria maximálneho aktualizovaného zisku :} \\[3mm] Z_p = \sum_{t=1}^{T_ž}(V_t-N_{pr}) * q^t - N_{ip} \\[3mm] Z_{p,1} = 4.35526 * (5 - 2.8) - 6 = 3.58 mil.\\[3mm] Z_{p,2} = 4.35526 * (5 - 0.93) - 12.4 = 5.33 mil. \\[3mm] \text{Pretože 2. variant má vyšší aktualizovaný zisk, je pochopiteľne aj podľa tohto kritéria ekonomicky efektívnejší.}",
         "table": pd.DataFrame({
             "- ": ["Projekt A", "", "Projekt B", ""],
