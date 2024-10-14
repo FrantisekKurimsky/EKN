@@ -230,7 +230,7 @@ math_problems_3 = [
     },
     {
         "question": "Porovnajte varianty s charakteristickými údajmi podľa tab. q=1.1",
-        "solution": r"\text{Vzhľadom na to, že porovnávané varianty majú rovnakú ročnú tržbu aj \\[3mm] konštantné ročné prevádzkové náklady, možno použiť kritérium minimálnych aktualizovaných nákladov:}",
+        "solution": r"\text{Vzhľadom na to, že porovnávané varianty majú rovnakú ročnú tržbu aj} \\[3mm] \text{konštantné ročné prevádzkové náklady, možno použiť kritérium minimálnych aktualizovaných nákladov:}",
         "table": pd.DataFrame({
             "Variant": ["1", "2"],
             "N_ip (€)": ["6 mil.", "12,4 mil."],
