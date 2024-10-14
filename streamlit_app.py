@@ -8,7 +8,7 @@ from problems import (
 
 st.set_page_config(layout="wide")
 st.sidebar.title("Menu")
-pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2."])
+pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2.", "Cvičenie 3."])
 
 def home_page():
     st.title("Ekonomika v elektroenergetike")
@@ -71,3 +71,5 @@ elif pages == "Cvičenie 1.":
     first("Cvičenie 1.", math_problems_1, 1)
 elif pages == "Cvičenie 2.":
     first("Cvičenie 2.", math_problems_2, 2)
+elif pages == "Cvičenie 3.":
+    first("Cvičenie 3.", math_problems_2, 2)
