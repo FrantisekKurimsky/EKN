@@ -230,7 +230,7 @@ math_problems_3 = [
     },
     {
         "question": "Porovnajte varianty s charakteristickými údajmi podľa tab. q=1.1",
-        "solution": r"\text{Vzhľadom na to, že porovnávané varianty majú rovnakú ročnú tržbu aj} \\[3mm] \text{konštantné ročné prevádzkové náklady, možno použiť kritérium minimálnych aktualizovaných nákladov:} \\[3mm] N_{vr} = N_{pr} + k_f * N_{ip} = min \\[3mm] k_f = \frac{q^T_ž * (q - 1)}{q^T_ž - 1} \\[3mm] k_f = \frac{1.1^6 - 0.1}{1.1^6 -1} = 0.22961 \\[3mm] N_{vr, 1} = 2.8 + 0.22961*6 = 4.18 \text{ mil.}\\[3mm] N_{vr, 2} = 0.93 + 0.22961*12.4 = 3.78 \text{ mil.}",
+        "solution": r"AHOJ \text{Vzhľadom na to, že porovnávané varianty majú rovnakú ročnú tržbu aj} \\[3mm] \text{konštantné ročné prevádzkové náklady, možno použiť kritérium minimálnych aktualizovaných nákladov:} \\[3mm] N_{vr} = N_{pr} + k_f * N_{ip} = min \\[3mm] k_f = \frac{q^T_ž * (q - 1)}{q^T_ž - 1} \\[3mm] k_f = \frac{1.1^6 - 0.1}{1.1^6 -1} = 0.22961 \\[3mm] N_{vr, 1} = 2.8 + 0.22961*6 = 4.18 \text{ mil.}\\[3mm] N_{vr, 2} = 0.93 + 0.22961*12.4 = 3.78 \text{ mil.}",
         "table": pd.DataFrame({
             "Variant": ["1", "2"],
             "N_ip (€)": ["6 mil.", "12,4 mil."],
