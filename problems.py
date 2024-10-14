@@ -169,7 +169,7 @@ math_problems_2 = [
     },
     {
         "question": "Očakávané ročné cash flow sú 25 000 tis. € počas štyroch rokov. Nech je miera inflácie  6 % a cena kapitálu na finančnom trhu  (úroková miera pre diskontovanie) 15 %. Aká je súčasná hodnota cash flow (SH CF) po zohľadnení inflácie?",
-        "solution": r"text{a) Riešenie cez nominálnu sadzbu: } \\[3mm] \text{Najprv zohľadníme 6\% infláciu úročením očakávaných cash flow (CF)} \\[3mm] \text{a potom jednotlivé CF diskontujeme, aby sme získali ich súčasnú hodnotu.} \\[5mm] \text{b) Prepočet cez reálnu úrokovú mieru:} \\[3mm] i_r = \frac{i-m}{1+m} = \frac{0.15-0.06}{1+0.06} = 0.085 \\[3mm] \text{Reálna úroková sadzba je 8,5 \%.} \\[5mm] \text{výpočet SHCF pomocou zásobiteľa : } \\[3mm] z_4 = \frac{(1+0.085)^4 - 1}{(1 + 0.085)^4 * 0.085} = 3.2756 \\[3mm] \text{Súčasná hodnota CF pre 8,5 \%  je: } \\[3mm] 25000 * z_4 = 25000 * 3.2756 = 81890 \text{tis. €}",
+        "solution": r"\text{a) Riešenie cez nominálnu sadzbu: } \\[3mm] \text{Najprv zohľadníme 6\% infláciu úročením očakávaných cash flow (CF)} \\[3mm] \text{a potom jednotlivé CF diskontujeme, aby sme získali ich súčasnú hodnotu.} \\[5mm] \text{b) Prepočet cez reálnu úrokovú mieru:} \\[3mm] i_r = \frac{i-m}{1+m} = \frac{0.15-0.06}{1+0.06} = 0.085 \\[3mm] \text{Reálna úroková sadzba je 8,5 \%.} \\[5mm] \text{výpočet SHCF pomocou zásobiteľa : } \\[3mm] z_4 = \frac{(1+0.085)^4 - 1}{(1 + 0.085)^4 * 0.085} = 3.2756 \\[3mm] \text{Súčasná hodnota CF pre 8,5 \%  je: } \\[3mm] 25000 * z_4 = 25000 * 3.2756 = 81890 \text{tis. €}",
         "table": None,
         "code": None,
         "solutiontable": {
