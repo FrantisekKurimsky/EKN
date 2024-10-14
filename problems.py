@@ -188,7 +188,7 @@ math_problems_2 = [
 math_problems_3 = [
     {
         "question": "Ekonomická životnosť posudzovaného variantu  T_ž  = 8 rokov. V rokoch t = 1, 2, 3, 4 a 5 je zisk Z_t  = 5 mil. €, v rokoch 6. a 7. je 6 mil. € a v 8. roku je zisk 7 mil. €. Vypočítajte aktualizovaný a priemerný ročný zisk, ak  q = 1,05.",
-        "solution": r"\text{Aktualizovný zisk pre 8 rokov, diskontácia} \\[3mm] Z_p = 5*(1,05^{-1} + 1,05^{-2} + 1,05^{-3} + 1,05^{-4} + 1,05^{-5}) + 6* (1.05^{-6} + 1.05 ^ {-7}) + 7*1.05^{-8} = 35.12368 mil. \€",
+        "solution": r"\text{Aktualizovný zisk pre 8 rokov, diskontácia} \\[3mm] Z_p = 5*(1,05^{-1} + 1,05^{-2} + 1,05^{-3} + 1,05^{-4} + 1,05^{-5}) + 6* (1.05^{-6} + 1.05 ^ {-7}) + 7*1.05^{-8} = 35.12368 mil. €",
         "table": None,
         "code": "(10**8) * (1.05 ** (-7))",
         "solutiontable": None
