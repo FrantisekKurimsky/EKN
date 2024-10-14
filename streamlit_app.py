@@ -42,7 +42,7 @@ def first(name, problems, number):
         if isinstance(problem['table'], pd.DataFrame):
             st.write(problem['table'])
     if "video" in problem:
-        col1, col2, col3 = st.columns([1, 2, 3])
+        col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             st.video(problem['video'])
 
