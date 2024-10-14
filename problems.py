@@ -205,6 +205,7 @@ math_problems_3 = [
         "solution": r"\text{a) vypočítame aktualizovanú, súčasnú hodnotu peňazí pomocou diskontovania, } \\[3mm] K_0 = K_n(1+r)^{-n} \\[3mm] NPV = CF_p - N_{ip} = \sum_{t=1}^{T_ž}CF_t(1+i)^{-t} - N_{ip} \\[3mm] \text{V našom prípade neriešime } N_{ip} \\[3mm] \text{0.rok } N_{ip, 0} = -1500 * (1+0.1) ^ {-0} = -1500 \\[3mm] \text{1.rok } N_{ip, 1} = 800 * 1.1^{-1} = 727.28 \\[3mm]\vdots \\[3mm] \text{Súčet peňažných tokov bez aktualizácie je v obidvoch projektoch rovnaký za celú dobu životnosti, 800 tis. €.} \\[3mm]\text{Čistá súčasná hodnota (t.j. súčet diskontovaných CF) je však pre projekt č.1 vyššia než pre projekt č.2.} \\[3mm] \text{Projekt 1 je s NPV = 365,76 tis. € výhodnejší}",
         "table": None,
         "code": None,
+        "video": "https://www.youtube.com/watch?v=N-lN5xORIwc&list=PLSdIOwUcBw9jwwclrX7qrynI9dwLfr13i",
         "solutiontable": {
             "a": pd.DataFrame({
                 "rok": ["", "0", "1", "2", "3", "4", "5", "spolu"],

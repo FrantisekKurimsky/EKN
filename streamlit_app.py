@@ -41,6 +41,8 @@ def first(name, problems, number):
             st.write(problem['table']['b'])
         if isinstance(problem['table'], pd.DataFrame):
             st.write(problem['table'])
+    if "video" in problem:
+        st.video(problem['video'])
 
     with st.expander("Riešenie"):
         if problem["solution"] is not None:
