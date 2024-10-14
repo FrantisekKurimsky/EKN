@@ -190,14 +190,14 @@ math_problems_3 = [
         "question": "Ekonomická životnosť posudzovaného variantu  T_ž  = 8 rokov. V rokoch t = 1, 2, 3, 4 a 5 je zisk Z_t  = 5 mil. €, v rokoch 6. a 7. je 6 mil. € a v 8. roku je zisk 7 mil. €. Vypočítajte aktualizovaný a priemerný ročný zisk, ak  q = 1,05.",
         "solution": r"\text{Aktualizovný zisk pre 8 rokov, diskontácia} \\[3mm] Z_p = 5*(1,05^{-1} + 1,05^{-2} + 1,05^{-3} + 1,05^{-4} + 1,05^{-5}) + 6* (1.05^{-6} + 1.05 ^ {-7}) + 7*1.05^{-8} = 35.12368 mil. € \\[3mm] \text{Na porovnanie jednoduchý súčet ziskov bez aktualizácie Zt  = 44 mil. €,}\\[3mm] \text{priemerná hodnota uvedenej sumy } Z_\Phi' = 5,5 mil. €.\\[5mm] \text{Priemerný ročný zisk cez umorovateľa: }\\[3mm] a_n = \frac{q^n * (q-1)}{q^n-1} \\[3mm] Z_{\Phi} = Z_p * a_n = 35.1268  * \frac{1.05^8 * (1.05-1)}{1.05^n-1} = 5,4349 mil. €",
         "table": None,
-        "code": "(10**8) * (1.05 ** (-7))",
+        "code": None,
         "solutiontable": None
     },
     {
         "question": "Použitím údajov z predošlého príkladu porovnajme dve alternatívy s odlišnou životnosťou. Prvému variantu na základe výpočtu zodpovedá aktualizovaný zisk ZpI = 35,1268 mil. €, pri TžI = 8 rokov. Predpokladajme aktualizovaný zisk druhého variantu pri ekonomickej životnosti TžII = 10 rokov ZpII = 38,1452 mil. €.",
-        "solution": r"\text{Pri životnosti 8 a 10 rokov ja najmenší spoločný násobok } Tp  = 40 \text{ rokov, }\\[3mm]\text{ pričom v } T_p \text{ sa }T_{ž1}\text{ cyklicky opakuje 5 - krát a }T_{ž2} \text{ 4 - krát. } \\[3mm] \text{Vtedy aktualizovaný zisk v celom čase porovnania }T_p\text{  pre uvedené varianty bude takýto: } \\[3mm] Z_{p1,40} = 35.1268  * (1 + 1.05^{-8} + 1.05^{-16} + 1.05^{-24} + 1.05^{-32} ) = 93.2576\text{mil. €} \\[3mm] Z_{p2,40} = 38.1452 * (1 + 1.05^{-10} + 1.05^{-20} + 1.05^{-30}) = 84.7655\text{ mil €} \\[3mm] \text{Cez priemerný ročný zisk: }\\[3mm] Z_{\Phi 1} = 35.1268 * \frac{q^8*(q-1)}{q*8-1} = 35.1268 * \frac{1.05^8*(0.05)}{1.05*8-1} = 5.4349\text{ mil. €} \\[3mm]Z_{\Phi 2} = 38.1452 * \frac{q^{10}*(q-1)}{q*{10}-1} = 38.1452 * \frac{1.05^{10}*(0.05)}{1.05*{10}-1} = 4.9390\text{ mil. €}",
+        "solution": r"\text{Pri životnosti 8 a 10 rokov ja najmenší spoločný násobok } Tp  = 40 \text{ rokov, }\\[3mm]\text{ pričom v } T_p \text{ sa }T_{ž1}\text{ cyklicky opakuje 5 - krát a }T_{ž2} \text{ 4 - krát. } \\[3mm] \text{Vtedy aktualizovaný zisk v celom čase porovnania }T_p\text{  pre uvedené varianty bude takýto: } \\[3mm] Z_{p1,40} = 35.1268  * (1 + 1.05^{-8} + 1.05^{-16} + 1.05^{-24} + 1.05^{-32} ) = 93.2576\text{mil. €} \\[3mm] Z_{p2,40} = 38.1452 * (1 + 1.05^{-10} + 1.05^{-20} + 1.05^{-30}) = 84.7655\text{ mil €} \\[3mm] \text{Cez priemerný ročný zisk: }\\[3mm] Z_{\Phi 1} = 35.1268 * \frac{q^8*(q-1)}{q*8-1} = 35.1268 * \frac{1.05^8*(0.05)}{1.05*8-1} = 5.4349\text{ mil. €} \\[3mm]Z_{\Phi 2} = 38.1452 * \frac{q^{10}*(q-1)}{q*{10}-1} = 38.1452 * \frac{1.05^{10}*(0.05)}{1.05*{10}-1} = 4.9390\text{ mil. €} \\[5mm] \text{V obidvoch prípadoch vidieť, že } Z_{p1,40}  \gt Z_{p2, 40} \text{ , ako aj } Z_{\Phi 1} \gt Z_{\Phi 2} \text{ , teda prvý variant je z hľadiska tvorby zisku výhodnejší. }",
         "table": None,
-        "code": "(10**8) * (1.05 ** (-7))",
+        "code": None,
         "solutiontable": None
     },
     
