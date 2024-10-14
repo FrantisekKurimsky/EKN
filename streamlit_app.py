@@ -43,7 +43,7 @@ def first(name, problems, number):
             st.write(problem['table'])
     if "video" in problem:
         col1, col2, col3 = st.columns([1, 2, 3])
-        with col3:
+        with col2:
             st.video(problem['video'])
 
     with st.expander("Riešenie"):
