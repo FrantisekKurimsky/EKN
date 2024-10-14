@@ -226,5 +226,20 @@ math_problems_3 = [
                 "kumulované NPV 1": ["projekt 1", "", "727.28", "1223.12", "1598.77", "1803.67", "1865.76", ""],
                 "kumulované NPV 2": ["projekt 2", "", "90.91", "338.83" ,"714.48", "1124.28", "1594", ""]
             }).style.applymap(highlight_cols, subset=['súčasná hodnota CF 1', 'súčasná hodnota CF 2']).applymap(highlight_cols2, subset=['kumulované NPV 1', 'kumulované NPV 2', 'kumulované CF 1', 'kumulované CF 2'])
-        }    },
+        }    
+    },
+    {
+        "question": "Porovnajte varianty s charakteristickými údajmi podľa tab. q=1.1",
+        "solution": "",
+        "table": pd.DataFrame({
+            "Variant": ["1", "2"],
+            "N_ip (€)": ["6 mil.", "12,4 mil."],
+            "N_vlr (€)": ["3,8 mil.", "3 mil."],
+            "N_pr (€)": ["2,8 mil.", "0,93 mil."],
+            "T_ž (rok)": ["6", "6"],
+            "V_tr (€)": ["5 mil.", "5 mil."]
+        }),
+        "code": None,
+        "solutiontable": None
+    },
 ]
