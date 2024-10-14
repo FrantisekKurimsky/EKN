@@ -225,6 +225,6 @@ math_problems_3 = [
                 "kumulované CF 2": ["projekt 2", "", "100", "400" ,"900", "1500", "2300", ""],
                 "kumulované NPV 1": ["projekt 1", "", "727.28", "1223.12", "1598.77", "1803.67", "1865.76", ""],
                 "kumulované NPV 2": ["projekt 2", "", "90.91", "338.83" ,"714.48", "1124.28", "1594", ""]
-            }).style.applymap(highlight_cols, subset=['súčasná hodnota CF 1', 'súčasná hodnota CF 2']).style.applymap(highlight_cols2, subset=['kumulované NPV 1', 'kumulované NPV 2'])
+            }).style.applymap(highlight_cols, subset=['súčasná hodnota CF 1', 'súčasná hodnota CF 2']).applymap(highlight_cols2, subset=['kumulované NPV 1', 'kumulované NPV 2'])
         }    },
 ]
