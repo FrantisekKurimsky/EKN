@@ -1,5 +1,9 @@
 import pandas as pd
 
+def highlight_cols(val):
+    color = 'background-color: lightgreen'
+    return color
+
 math_problems_1 = [
     {
         "question": "Banka poskytuje 11 % ročný úrok na uložených vkladoch. Banka pripisuje úroky v poslednom dni každého štvrťroka. Peniaze uložené na vklad sa úročia na bežný mesiac, ak sú vložené do 8. dňa v bežnom mesiaci. Občan si otvoril účet 8. januára a vložil 5000 €. Aký veľký úrok získa do 30. júna?",
@@ -214,6 +218,6 @@ math_problems_3 = [
                 "diskontná sadzba 10%": ["", "1", "0,9091", "0,8264", "0,7513", "0,683", "0,6209", "-"],
                 "súčasná hodnota CF 1": ["projekt 1", "-1500", "727,28", "495,84", "375,65", "204,9", "62,09", "365,76"],
                 "súčasná hodnota CF 2": ["projekt 2", "-1500", "90,91", "247,92", "375,65", "409,8", "496,72", "121"]
-            })
+            }).style.applymap(highlight_cols, subset=['súčasná hodnota CF 1', 'súčasná hodnota CF 2'])
         }    },
 ]
