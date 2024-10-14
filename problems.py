@@ -3,6 +3,9 @@ import pandas as pd
 def highlight_cols(val):
     color = 'background-color: lightgreen'
     return color
+def highlight_cols2(val):
+    color = 'background-color: lightpink'
+    return color
 
 math_problems_1 = [
     {
@@ -206,7 +209,7 @@ math_problems_3 = [
     },
     {
         "question": "Výber z dvoch investičných projektov s rovnakými kapitálovými výdavkami. Očakávané CF sú počas rovnakej doby životnosti rozložené v čase inak v Projekte 1 a inak v Projekte 2.  \na) Vypočítajte čistú súčasnú hodnotu každého projektu NPV, pre úrokovú sadzbu 10% a vyberte výhodnejší projekt.  \nb) Vypočítajte dobu úhrady projektov bez aktualizácie času a s aktualizáciou času.",
-        "solution": r"\text{a) vypočítame aktualizovanú, súčasnú hodnotu peňazí pomocou diskontovania, } \\[3mm] K_0 = K_n(1+r)^{-n} \\[3mm] NPV = CF_p - N_{ip} = \sum_{t=1}^{T_ž}CF_t(1+i)^{-t} - N_{ip} \\[3mm] \text{V našom prípade neriešime } N_{ip} \\[3mm] \text{0.rok } N_{ip, 0} = -1500 * (1+0.1) ^ {-0} = -1500 \\[3mm] \text{1.rok } N_{ip, 1} = 800 * 1.1^{-1} = 727.28 \\[3mm]\vdots \\[3mm] \text{Súčet peňažných tokov bez aktualizácie je v obidvoch projektoch rovnaký za celú dobu životnosti, 800 tis. €.} \\[3mm]\text{Čistá súčasná hodnota (t.j. súčet diskontovaných CF) je však pre projekt č.1 vyššia než pre projekt č.2.} \\[3mm] \text{Projekt 1 je s NPV = 365,76 tis. € výhodnejší}",
+        "solution": r"\text{a) vypočítame aktualizovanú, súčasnú hodnotu peňazí pomocou diskontovania, } \\[3mm] \text{Riešenie je v tabuľke zvýraznené zelenou. } \\[3mm] K_0 = K_n(1+r)^{-n} \\[3mm] NPV = CF_p - N_{ip} = \sum_{t=1}^{T_ž}CF_t(1+i)^{-t} - N_{ip} \\[3mm] \text{V našom prípade neriešime } N_{ip} \\[3mm] \text{0.rok } N_{ip, 0} = -1500 * (1+0.1) ^ {-0} = -1500 \\[3mm] \text{1.rok } N_{ip, 1} = 800 * 1.1^{-1} = 727.28 \\[3mm]\vdots \\[3mm] \text{Súčet peňažných tokov bez aktualizácie je v obidvoch projektoch rovnaký za celú dobu životnosti, 800 tis. €.} \\[3mm]\text{Čistá súčasná hodnota (t.j. súčet diskontovaných CF) je však pre projekt č.1 vyššia než pre projekt č.2.} \\[3mm] \text{Projekt 1 je s NPV = 365,76 tis. € výhodnejší}",
         "table": None,
         "code": None,
         "video": "https://www.youtube.com/watch?v=N-lN5xORIwc&list=PLSdIOwUcBw9jwwclrX7qrynI9dwLfr13i",
@@ -217,7 +220,11 @@ math_problems_3 = [
                 "cash flow (tisíc €) 2": ["projekt 2", "-1500", "100", "300", "500", "600", "800", "800"],
                 "diskontná sadzba 10%": ["", "1", "0,9091", "0,8264", "0,7513", "0,683", "0,6209", "-"],
                 "súčasná hodnota CF 1": ["projekt 1", "-1500", "727,28", "495,84", "375,65", "204,9", "62,09", "365,76"],
-                "súčasná hodnota CF 2": ["projekt 2", "-1500", "90,91", "247,92", "375,65", "409,8", "496,72", "121"]
-            }).style.applymap(highlight_cols, subset=['súčasná hodnota CF 1', 'súčasná hodnota CF 2'])
+                "súčasná hodnota CF 2": ["projekt 2", "-1500", "90,91", "247,92", "375,65", "409,8", "496,72", "121"],
+                "kumulované CF 1": ["projekt 1", "", "800", "1400", "1900", "2200", "2300", ""],
+                "kumulované CF 2": ["projekt 2", "", "100", "400" ,"900", "1500", "2300", ""],
+                "kumulované NPV 1": ["projekt 1", "", "727.28", "1223.12", "1598.77", "1803.67", "1865.76", ""],
+                "kumulované NPV 2": ["projekt 2", "", "90.91", "338.83" ,"714.48", "1124.28", "1594", ""]
+            }).style.applymap(highlight_cols, subset=['súčasná hodnota CF 1', 'súčasná hodnota CF 2']).style.applymap(highlight_cols2, subset=['kumulované NPV 1', 'kumulované NPV 2'])
         }    },
 ]
