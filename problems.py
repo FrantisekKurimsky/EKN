@@ -202,7 +202,7 @@ math_problems_3 = [
     },
     {
         "question": "Výber z dvoch investičných projektov s rovnakými kapitálovými výdavkami. Očakávané CF sú počas rovnakej doby životnosti rozložené v čase inak v Projekte 1 a inak v Projekte 2.  \na) Vypočítajte čistú súčasnú hodnotu každého projektu NPV, pre úrokovú sadzbu 10% a vyberte výhodnejší projekt.  \nb) Vypočítajte dobu úhrady projektov bez aktualizácie času a s aktualizáciou času.",
-        "solution": r"\text{a) }",
+        "solution": r"\text{a) vypočítame aktualizovanú, súčasnú hodnotu peňazí pomocou diskontovania, } \\[3mm] K_0 = K_n(1+r)^{-n} \\[3mm] NPV = CF_p - N_{ip} = \sum_{t=1}^{T_ž}CF_t(1+i)^{-t} - N_{ip} \\[3mm] \text{V našom prípade neriešime } N_{ip} ",
         "table": None,
         "code": None,
         "solutiontable": {
