@@ -10,7 +10,28 @@ from problems import (
 from streamlit_pdf_viewer import pdf_viewer
 import streamlit.components.v1 as components
 
+st.markdown(
+    """
+    <script type="text/javascript">
+        (function() {
+            var ga = document.createElement('script'); 
+            ga.src = 'https://www.googletagmanager.com/gtag/js?id=G-LVS20ZBMWP'; 
+            ga.async = true;
+            var s = document.getElementsByTagName('script')[0]; 
+            s.parentNode.insertBefore(ga, s);
 
+            var script = document.createElement('script');
+            script.innerHTML = `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'G-**********');
+            `;
+            document.head.appendChild(script);
+        })();
+    </script>
+    """, unsafe_allow_html=True
+)
 
 st.set_page_config(layout="wide")
 st.sidebar.title("Menu")
