@@ -10,19 +10,7 @@ from problems import (
 from streamlit_pdf_viewer import pdf_viewer
 import streamlit.components.v1 as components
 
-st.markdown(
-    """
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id=G-LVS20ZBMWP"></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', 'G-LVS20ZBMWP');
-        </script>
-        >
-    """, unsafe_allow_html=True)
+
 
 st.set_page_config(layout="wide")
 st.sidebar.title("Menu")
