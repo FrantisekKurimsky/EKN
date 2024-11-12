@@ -10,8 +10,12 @@ from problems import (
 from streamlit_pdf_viewer import pdf_viewer
 import streamlit.components.v1 as components
 
-
 st.set_page_config(layout="wide")
+with open("ga.html", "r") as f:
+    html_code = f.read()
+    components.html(html_code, height=0)
+
+
 st.sidebar.title("Menu")
 pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2.", "Cvičenie 3.", "Cvičenie 4. a 5.", "Cvičenie 6."])
 
