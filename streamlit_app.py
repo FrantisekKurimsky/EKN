@@ -13,7 +13,7 @@ import streamlit.components.v1 as components
 st.set_page_config(layout="wide")
 with open("ga.html", "r") as f:
     html_code = f.read()
-    components.html(html_code, height=0)
+    components.iframe(html_code, height=0)
 
 
 st.sidebar.title("Menu")
