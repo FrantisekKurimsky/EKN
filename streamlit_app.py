@@ -15,7 +15,7 @@ st.set_page_config(layout="wide")
 
 
 st.sidebar.title("Menu")
-pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2.", "Cvičenie 3.", "Cvičenie 4. a 5.", "Cvičenie 6."])
+pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2.", "Cvičenie 3.", "Cvičenie 4. a 5.", "Cvičenie 6.", "Cvičenie 7."])
 
 def home_page():
     st.title("Ekonomika v elektroenergetike")
@@ -109,3 +109,36 @@ elif pages == "Cvičenie 6.":
     with open("docs/Cvicenie_6.html", "r", encoding="utf-8") as f:
         html_content = f.read()
     components.html(html_content, height=11500, scrolling=False)
+
+elif pages == "Cvičenie 7.":
+    st.title("Cvičenie 7.")
+    with st.expander('Načítanie dataframu pomocou Dictionary'):
+        st.code('''
+        dataframe = pd.DataFrame([
+        {"price": 52.5, "quantity": 80},
+        {"price": 50, "quantity": 100},
+        {"price": 41, "quantity": 600},
+        {"price": 30, "quantity": 150},
+        {"price": 26, "quantity": 350}
+    ])
+    ''')
+    with st.expander('MatPlotLib Graphs'):
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image('docs/MatPlotLib.png')
+
+    with st.expander('Linear Regresion'):
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.video('https://www.youtube.com/watch?v=PGXI9UzaKfA')
+
+    with st.expander('Mean square error (MSE)'):
+
+        col1, col2, col3 = st.columns([1, 2, 1])
+        with col2:
+            st.image('docs/MSE.png')
+    st.write('Odkazy')
+    st.write('https://www.energy-charts.info/?l=en&c=DE')
+    st.write('tutorial pandas https://www.w3schools.com/python/pandas/pandas_dataframes.asp')
+    st.write('tutorial matplotlib https://www.w3schools.com/python/matplotlib_intro.asp')
+
