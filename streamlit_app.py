@@ -15,6 +15,7 @@ st.set_page_config(layout="wide")
 
 
 st.sidebar.title("Menu")
+# MENU
 pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2.", "Cvičenie 3.", "Cvičenie 4. a 5.", "Cvičenie 6.", "Cvičenie 7."])
 
 def home_page():
