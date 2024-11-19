@@ -1,6 +1,8 @@
 import streamlit as st
+import streamlit_nested_layout
 from PIL import Image
-from urllib.parse import urlencode, parse_qs
+from docs.cvicenie_7 import cvicenie_7
+from docs.cvicenie_6 import cvicenie_6
 import pandas as pd
 from problems import (
     math_problems_1,
@@ -87,7 +89,7 @@ elif pages == "Cvičenie 3.":
     first("Cvičenie 3.", math_problems_3, 3)
 elif pages == "Cvičenie 4. a 5.":
     st.title("Cvičenie 4. a 5.")
-    pdf_viewer("docs/cv_6_7_tyzden.pdf", width=800, pages_vertical_spacing=3, resolution_boost=2)
+    pdf_viewer("docs/cv_4_5.pdf", width=800, pages_vertical_spacing=3, resolution_boost=2)
 elif pages == "Cvičenie 6.":
     st.title("Cvičenie 6.")
     file_path = "docs/Cvicenie_6.ipynb"
@@ -107,28 +109,27 @@ elif pages == "Cvičenie 6.":
     st.write('Súbor si môžete stiahnúť a otvoriť v prostredí colab, cez File/Upload notebook.')
     image = Image.open("docs/Screenshot 2024-11-11 172149.png")
     st.image(image, caption="Image Loaded with PIL", use_column_width=False)
-    with open("docs/Cvicenie_6.html", "r", encoding="utf-8") as f:
-        html_content = f.read()
-    components.html(html_content, height=11500, scrolling=False)
+    cvicenie_6()
 
 elif pages == "Cvičenie 7.":
     st.title("Cvičenie 7.")
-    with st.expander('Načítanie dataframu pomocou Dictionary'):
-        st.code('''
-        dataframe = pd.DataFrame([
-        {"price": 52.5, "quantity": 80},
-        {"price": 50, "quantity": 100},
-        {"price": 41, "quantity": 600},
-        {"price": 30, "quantity": 150},
-        {"price": 26, "quantity": 350}
-    ])
-    ''')
+    file_path = "docs/Cvicenie_7.ipynb"
+    with open(file_path, "rb") as file:
+        notebook_content = file.read()
+
+    # Create a download button
+    st.download_button(
+        label="Stiahnúť Jupyter Notebook",
+        data=notebook_content,
+        file_name="Cvicenie_7.ipynb",
+        mime="application/octet-stream"
+    )
     with st.expander('MatPlotLib Graphs'):
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             st.image('docs/MatPlotLib.png')
 
-    with st.expander('Linear Regresion'):
+    with st.expander('Linear Regression'):
         col1, col2, col3 = st.columns([1, 2, 1])
         with col2:
             st.video('https://www.youtube.com/watch?v=PGXI9UzaKfA')
@@ -142,4 +143,6 @@ elif pages == "Cvičenie 7.":
     st.write('https://www.energy-charts.info/?l=en&c=DE')
     st.write('tutorial pandas https://www.w3schools.com/python/pandas/pandas_dataframes.asp')
     st.write('tutorial matplotlib https://www.w3schools.com/python/matplotlib_intro.asp')
+
+    cvicenie_7()
 
