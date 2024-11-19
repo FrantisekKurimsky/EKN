@@ -3,3 +3,4 @@ streamlit-pdf-viewer
 streamlit_nested_layout
 matplotlib
 pandas
+openpyxl
