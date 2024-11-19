@@ -390,7 +390,9 @@ def cvicenie_6():
         st.write([str(item) for item in l])
 
         st.write('Pretypovanie prvkov menšich ako 5 na stringy, reťazce')
+        st.code('''[str(item) for item in l if item < 5]''')
         st.write([str(item) for item in l if item < 5])
+        st.code('''[str(item) if item < 5 else "5" for item in l]''')
         st.write([str(item) if item < 5 else "5" for item in l])
 
     with st.expander('Funkcie'):
