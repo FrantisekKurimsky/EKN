@@ -363,7 +363,7 @@ def cvicenie_6():
         ''')
         i = 0
         while i < len(l):
-            print(l[i])
+            st.write(l[i])
             i += 1
         st.write('For cyklus naprieč indexami')
         st.code('''
@@ -381,12 +381,11 @@ def cvicenie_6():
         ''')
         l = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9]
         for item in l:
-            print(item)
+            st.write(item)
 
         st.write('Jednoriadkový for cyklus, pre prácu s listami')
         st.write('Pretypovanie všetkých prvkov na stringy, reťazce')
         st.code('''[str(item) for item in l]''')
-        st.write(l)
         st.write([str(item) for item in l])
 
         st.write('Pretypovanie prvkov menšich ako 5 na stringy, reťazce')
