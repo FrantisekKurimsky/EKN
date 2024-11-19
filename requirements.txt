@@ -4,3 +4,4 @@ streamlit_nested_layout
 matplotlib
 pandas
 openpyxl
+scikit-learn
