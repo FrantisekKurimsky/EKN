@@ -3,7 +3,7 @@ import pandas as pd
 
 def cvicenie_7():
     st.subheader('Začiatky knižnice Pandas a grafy')
-    st.write('Importovanie knižnice')
+    st.write('Importovanie knižnice ')
 
     st.code('''import pandas as pd''')
     with st.expander('Načítanie dataframu pomocou Dictionary'):
