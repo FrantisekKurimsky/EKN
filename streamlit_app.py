@@ -100,7 +100,7 @@ elif pages == "Cvičenie 6.":
 
     # Create a download button
     st.download_button(
-        label="Stiahnúť Jupyter Notebook",
+        label="Stiahnuť Jupyter Notebook",
         data=notebook_content,
         file_name="Cvicenie_6.ipynb",
         mime="application/octet-stream"
@@ -119,7 +119,7 @@ elif pages == "Cvičenie 7.":
 
     # Create a download button
     st.download_button(
-        label="Stiahnúť Jupyter Notebook",
+        label="Stiahnuť Jupyter Notebook",
         data=notebook_content,
         file_name="Cvicenie_7.ipynb",
         mime="application/octet-stream"

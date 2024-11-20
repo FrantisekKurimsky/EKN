@@ -3,7 +3,7 @@ import pandas as pd
 
 def cvicenie_7():
     st.subheader('Začiatky knižnice Pandas a grafy')
-    st.write('Imortovanie knižnice')
+    st.write('Importovanie knižnice')
     st.code('''import pandas as pd''')
     with st.expander('Načítanie dataframu pomocou Dictionary'):
 
@@ -111,7 +111,7 @@ def cvicenie_7():
         st.subheader('Vytvorenie predikcií')
         st.code('''y_pred = model.predict(data[['Residual load']])''')
         y_pred = model.predict(data[['Residual load']])
-        st.subheader('Zobrazebie priamky v grafe lineárnej regresie')
+        st.subheader('Zobrazenie priamky v grafe lineárnej regresie')
         st.code(
             '''
                 plt.figure(figsize=(10, 7))
