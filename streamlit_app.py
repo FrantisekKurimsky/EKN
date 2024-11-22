@@ -113,6 +113,7 @@ elif pages == "Cvičenie 6.":
 
 elif pages == "Cvičenie 7.":
     st.title("Cvičenie 7.")
+    st.subheader('Sledovanie závislosti medzi cenami elektriny a Residual Load pre Nemecko')
     file_path = "docs/Cvicenie_7.ipynb"
     with open(file_path, "rb") as file:
         notebook_content = file.read()

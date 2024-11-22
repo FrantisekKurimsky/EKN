@@ -70,7 +70,7 @@ def cvicenie_7():
             pd.read_json('data.json')
         ''')
 
-    with st.expander('Lineárna regresia Residual Load'):
+    with st.expander('Lineárna regresia medzi Residual Load a cenou elektriny'):
         st.write('zostávajúci dopyt po elektrickej energii, ktorý obnoviteľné zdroje energie nedokážu pokryť.')
         st.subheader('Vytvorenie dataframe-u data, vyberáme iba stĺpce, ktoré potrebujeme')
         st.code('''
