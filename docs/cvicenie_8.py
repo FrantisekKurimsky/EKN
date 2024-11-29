@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 def cvicenie_8():
 
     st.write('Importovanie knižnice pandas')
+
     st.code('''import pandas as pd''')
     st.write('Stiahneme si dáta z https://www.energy-charts.info/charts/price_spot_market/chart.htm?l=en&c=NL&interval=year&legendItems=7y5  \n vymažeme nežiadúce riadky, v našom prípade 1. a 3. a nahráme do prostredia colab')
     st.code('''
