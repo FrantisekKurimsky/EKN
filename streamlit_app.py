@@ -3,6 +3,7 @@ import streamlit_nested_layout
 from PIL import Image
 from docs.cvicenie_7 import cvicenie_7
 from docs.cvicenie_6 import cvicenie_6
+from docs.cvicenie_8 import cvicenie_8
 import pandas as pd
 from problems import (
     math_problems_1,
@@ -18,7 +19,7 @@ st.set_page_config(layout="wide")
 
 st.sidebar.title("Menu")
 # MENU
-pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2.", "Cvičenie 3.", "Cvičenie 4. a 5.", "Cvičenie 6.", "Cvičenie 7."])
+pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2.", "Cvičenie 3.", "Cvičenie 4. a 5.", "Cvičenie 6.", "Cvičenie 7.", "Cvičenie 8."])
 
 def home_page():
     st.title("Ekonomika v elektroenergetike")
@@ -147,3 +148,18 @@ elif pages == "Cvičenie 7.":
 
     cvicenie_7()
 
+elif pages == "Cvičenie 8.":
+    st.title('Cvicenie 8')
+    st.subheader('Sledovanie negatívnych cien v Holandsku pre rok 2024')
+    file_path = "docs/Cvicenie_8.ipynb"
+    with open(file_path, "rb") as file:
+        notebook_content = file.read()
+
+    # Create a download button
+    st.download_button(
+        label="Stiahnuť Jupyter Notebook",
+        data=notebook_content,
+        file_name="Cvicenie_8.ipynb",
+        mime="application/octet-stream"
+    )
+    cvicenie_8()
