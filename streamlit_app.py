@@ -16,7 +16,7 @@ from streamlit_pdf_viewer import pdf_viewer
 # Import new modular pages
 from pages.uploads import upload_page, results_page
 from pages.merit_order import merit_order_page
-from pages.contest import contest_page
+# from pages.contest import contest_page
 from utils.auth import require_login_for_protected_pages, show_logout_button
 
 st.set_page_config(layout="wide")
