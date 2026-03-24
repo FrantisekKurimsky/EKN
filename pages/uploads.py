@@ -98,30 +98,35 @@ def results_page():
 
     st.caption(f"Počet zobrazených odovzdaní: {len(filtered_records)}")
 
-    for payload in filtered_records:
-        submission_id = payload.get("submission_id", "")
-        topic = payload.get("topic", "")
-        submitted_at = payload.get("submitted_at", "")
-        result_title = payload.get("result_title", "Bez názvu")
-        description = payload.get("description", "")
-        files = payload.get("files", [])
+    for row_start in range(0, len(filtered_records), 2):
+        row_items = filtered_records[row_start:row_start + 2]
+        cols = st.columns(2, gap="large")
 
-        st.markdown("---")
-        st.subheader(result_title)
-        st.write(f"Téma: {topic}")
-        st.write(f"Čas: {submitted_at}")
-        st.write(f"ID: {submission_id}")
-        st.write(f"Popis: {description}")
+        for col_index, payload in enumerate(row_items):
+            submission_id = payload.get("submission_id", "")
+            topic = payload.get("topic", "")
+            submitted_at = payload.get("submitted_at", "")
+            result_title = payload.get("result_title", "Bez názvu")
+            description = payload.get("description", "")
+            files = payload.get("files", [])
 
-        for file_info in files:
-            file_name = file_info.get("name", "")
-            storage_path = file_info.get("storage_path", "")
-            if not storage_path:
-                continue
+            with cols[col_index]:
+                with st.container(border=True):
+                    st.subheader(result_title)
+                    st.write(f"Téma: {topic}")
+                    st.write(f"Čas: {submitted_at}")
+                    st.write(f"ID: {submission_id}")
+                    st.write(f"Popis: {description}")
 
-            try:
-                blob = bucket.blob(storage_path)
-                image_bytes = blob.download_as_bytes()
-                st.image(image_bytes, caption=file_name)
-            except Exception as error:
-                st.error(f"Chyba pri načítavaní obrázka {file_name}: {error}")
+                    for file_info in files:
+                        file_name = file_info.get("name", "")
+                        storage_path = file_info.get("storage_path", "")
+                        if not storage_path:
+                            continue
+
+                        try:
+                            blob = bucket.blob(storage_path)
+                            image_bytes = blob.download_as_bytes()
+                            st.image(image_bytes, caption=file_name)
+                        except Exception as error:
+                            st.error(f"Chyba pri načítavaní obrázka {file_name}: {error}")
