@@ -35,7 +35,7 @@ exercise_pages = [
     "Cvičenie 6.",
     "Cvičenie 7.",
     "Cvičenie 8.",
-    "Merit Order - Hra",
+    "Merit Order",
     # "Sutaz",
 ]
 
