@@ -5,6 +5,12 @@ from docs.cvicenie_7 import cvicenie_7
 from docs.cvicenie_6 import cvicenie_6
 from docs.cvicenie_8 import cvicenie_8
 import pandas as pd
+from datetime import datetime
+import re
+import hmac
+from uuid import uuid4
+import firebase_admin
+from firebase_admin import credentials, firestore, storage as firebase_storage
 from problems import (
     math_problems_1,
     math_problems_2,
@@ -16,10 +22,281 @@ import streamlit.components.v1 as components
 st.set_page_config(layout="wide")
 
 
+def _require_login_for_protected_pages() -> bool:
+    auth_config = st.secrets.get("auth")
+    if not auth_config or not auth_config.get("password"):
+        st.error("Prihlasovanie nie je nastavene. Doplňte [auth] password do .streamlit/secrets.toml.")
+        return False
+
+    expected_password = str(auth_config["password"])
+    if "is_authenticated" not in st.session_state:
+        st.session_state.is_authenticated = False
+
+    if st.session_state.is_authenticated:
+        return True
+
+    st.subheader("Prihlásenie")
+    with st.form("protected_login_form"):
+        password = st.text_input("Heslo", type="password")
+        submitted = st.form_submit_button("Prihlásiť")
+
+    if submitted:
+        if hmac.compare_digest(password, expected_password):
+            st.session_state.is_authenticated = True
+            st.success("Prihlásenie úspešné.")
+            st.rerun()
+        else:
+            st.error("Nesprávne heslo.")
+
+    return False
+
+def _safe_slug(value: str) -> str:
+    cleaned = re.sub(r"[^a-zA-Z0-9_-]+", "_", value.strip())
+    return cleaned.strip("_")[:80] or "student"
+
+
+@st.cache_resource
+def _get_firebase_clients():
+    if "firebase" not in st.secrets:
+        raise RuntimeError("Firebase nie je nakonfigurovany v .streamlit/secrets.toml.")
+
+    firebase_config = st.secrets["firebase"]
+    if "service_account" not in firebase_config:
+        raise RuntimeError("Chyba sekcia [firebase.service_account] v secrets.")
+    if "storage_bucket" not in firebase_config:
+        raise RuntimeError("Chyba firebase.storage_bucket v secrets.")
+
+    service_account_info = dict(firebase_config["service_account"])
+    required_fields = [
+        "type",
+        "project_id",
+        "private_key_id",
+        "private_key",
+        "client_email",
+        "client_id",
+        "token_uri",
+    ]
+    missing_fields = [field for field in required_fields if not service_account_info.get(field)]
+    if missing_fields:
+        raise RuntimeError(f"V secrets chybaju povinne Firebase polia: {', '.join(missing_fields)}")
+
+    placeholder_markers = ["PASTE_FROM_SERVICE_ACCOUNT_JSON", "PASTE_KEY_HERE", "..."]
+    for key, value in service_account_info.items():
+        if isinstance(value, str) and any(marker in value for marker in placeholder_markers):
+            raise RuntimeError(
+                f"Pole firebase.service_account.{key} stale obsahuje placeholder hodnotu."
+            )
+
+    if "private_key" in service_account_info:
+        service_account_info["private_key"] = service_account_info["private_key"].replace("\\n", "\n")
+
+    bucket_name = str(firebase_config["storage_bucket"]).strip()
+    if bucket_name.startswith("gs://"):
+        bucket_name = bucket_name[len("gs://"):]
+    bucket_name = bucket_name.rstrip("/")
+    if not bucket_name:
+        raise RuntimeError("firebase.storage_bucket je prázdny.")
+
+    if not firebase_admin._apps:
+        cred = credentials.Certificate(service_account_info)
+        firebase_admin.initialize_app(cred, {"storageBucket": bucket_name})
+
+    db = firestore.client()
+    bucket = firebase_storage.bucket()
+    return db, bucket
+
+
+def _save_uploaded_files(topic: str, result_title: str, description: str, files):
+    db, bucket = _get_firebase_clients()
+    timestamp = datetime.utcnow()
+    submission_id = f"{timestamp.strftime('%Y%m%d_%H%M%S')}_{uuid4().hex[:8]}"
+    folder_prefix = f"submissions/{timestamp.strftime('%Y-%m-%d')}"
+
+    uploaded_files = []
+    for uploaded_file in files:
+        blob_path = f"{folder_prefix}/{uploaded_file.name}"
+        blob = bucket.blob(blob_path)
+        blob.upload_from_string(
+            uploaded_file.getvalue(),
+            content_type=uploaded_file.type or "application/octet-stream",
+        )
+
+        uploaded_files.append(
+            {
+                "name": uploaded_file.name,
+                "content_type": uploaded_file.type,
+                "size_bytes": uploaded_file.size,
+                "storage_path": blob_path,
+            }
+        )
+
+    metadata = {
+        "submission_id": submission_id,
+        "topic": topic,
+        "result_title": result_title,
+        "description": description,
+        "submitted_at": timestamp.isoformat(timespec="seconds") + "Z",
+        "files": uploaded_files,
+    }
+
+    db.collection("student_submissions").document(submission_id).set(metadata)
+    return metadata
+
+
+def upload_results_page():
+    st.title("Odovzdanie výsledkov")
+    st.write("Táto stránka je určená na odovzdanie obrázkov výsledkov.")
+    st.info("Dnešné témy: negatívne ceny na day-ahead trhu a lineárna regresia medzi residual load a cenou.")
+
+    try:
+        _get_firebase_clients()
+    except Exception as error:
+        st.error("Upload je momentálne vypnuty, pretoze Firebase nie je nakonfigurovany.")
+        st.caption(f"Detail chyby: {error}")
+        return
+
+    with st.form("student_upload_form"):
+        topic = st.selectbox(
+            "Téma odovzdania",
+            [
+                "Negatívne ceny (day-ahead)",
+                "Lineárna regresia (Residual Load vs Price)",
+            ],
+        )
+        result_title = st.text_input("Názov výsledku")
+        description = st.text_area("Popis výsledkov")
+        files = st.file_uploader(
+            "Nahrajte obrázky výsledkov",
+            type=["png", "jpg", "jpeg", "webp"],
+            accept_multiple_files=True,
+        )
+        submitted = st.form_submit_button("Odoslať výsledky")
+
+    if submitted:
+        if not files:
+            st.error("Nahrajte aspoň jeden obrázok.")
+        elif not result_title.strip():
+            st.error("Doplňte názov výsledku.")
+        elif not description.strip():
+            st.error("Doplňte krátky popis výsledkov.")
+        else:
+            submission_data = _save_uploaded_files(topic, result_title, description, files)
+            st.success("Výsledky boli úspešne odoslané.")
+            # st.write(f"ID odovzdania: {submission_data['submission_id']}")
+            st.write("Nahrané súbory:")
+            for uploaded_file in files:
+                st.write(f"- {uploaded_file.name}")
+
+    st.caption("Odovzdané výsledky nájdete v menu na stránke 'Prehľad výsledkov'.")
+
+
+def view_results_page():
+    st.title("Prehľad výsledkov")
+    st.write("Zobrazenie odovzdaných výsledkov z Firebase.")
+
+    try:
+        db, bucket = _get_firebase_clients()
+    except Exception as error:
+        st.error("Zobrazenie je vypnuté, pretože Firebase nie je nakonfigurovaný.")
+        st.caption(f"Detail chyby: {error}")
+        return
+
+    documents = (
+        db.collection("student_submissions")
+        .order_by("submitted_at", direction=firestore.Query.DESCENDING)
+        .limit(50)
+        .stream()
+    )
+
+    records = [doc.to_dict() for doc in documents]
+    if not records:
+        st.caption("Zatiaľ nie sú žiadne odovzdania.")
+        return
+
+    topics = sorted({payload.get("topic", "") for payload in records if payload.get("topic", "")})
+    selected_topic = st.selectbox("Filter podľa témy", ["Všetky témy"] + topics)
+
+    if selected_topic == "Všetky témy":
+        filtered_records = records
+    else:
+        filtered_records = [payload for payload in records if payload.get("topic") == selected_topic]
+
+    if not filtered_records:
+        st.caption("Pre zvolenú tému nie sú žiadne odovzdania.")
+        return
+
+    st.caption(f"Počet zobrazených odovzdaní: {len(filtered_records)}")
+
+    for payload in filtered_records:
+        submission_id = payload.get("submission_id", "")
+        topic = payload.get("topic", "")
+        submitted_at = payload.get("submitted_at", "")
+        result_title = payload.get("result_title", "Bez názvu")
+        description = payload.get("description", "")
+        files = payload.get("files", [])
+        st.markdown("---")
+        st.subheader(result_title)
+        st.write(f"Téma: {topic}")
+        st.write(f"Čas: {submitted_at}")
+        # st.write(f"ID: {submission_id}")
+        st.write(f"Popis: {description}")
+
+        for file_info in files:
+            file_name = file_info.get("name", "")
+            storage_path = file_info.get("storage_path", "")
+            if not storage_path:
+                continue
+
+            blob = bucket.blob(storage_path)
+            image_bytes = blob.download_as_bytes()
+            st.image(image_bytes, caption=file_name)
+
+
 
 st.sidebar.title("Menu")
-# MENU
-pages = st.sidebar.selectbox("", ["Domov", "Cvičenie 1.", "Cvičenie 2.", "Cvičenie 3.", "Cvičenie 4. a 5.", "Cvičenie 6.", "Cvičenie 7.", "Cvičenie 8."])
+exercise_pages = [
+    "Domov",
+    "Cvičenie 1.",
+    "Cvičenie 2.",
+    "Cvičenie 3.",
+    "Cvičenie 4. a 5.",
+    "Cvičenie 6.",
+    "Cvičenie 7.",
+    "Cvičenie 8.",
+]
+
+if "current_page" not in st.session_state:
+    st.session_state.current_page = "Domov"
+if "last_exercise_choice" not in st.session_state:
+    st.session_state.last_exercise_choice = "Domov"
+
+exercise_choice = st.sidebar.selectbox(
+    "",
+    exercise_pages,
+    index=exercise_pages.index(st.session_state.last_exercise_choice),
+)
+
+if exercise_choice != st.session_state.last_exercise_choice:
+    st.session_state.current_page = exercise_choice
+
+st.session_state.last_exercise_choice = exercise_choice
+
+st.sidebar.markdown("---")
+st.sidebar.caption("Odovzdania")
+if st.sidebar.button("Odovzdanie výsledkov", use_container_width=True):
+    st.session_state.current_page = "Odovzdanie výsledkov"
+    st.rerun()
+
+if st.sidebar.button("Prehľad výsledkov", use_container_width=True):
+    st.session_state.current_page = "Prehľad výsledkov"
+    st.rerun()
+
+pages = st.session_state.current_page
+
+if st.session_state.get("is_authenticated"):
+    if st.sidebar.button("Odhlásiť"):
+        st.session_state.is_authenticated = False
+        st.rerun()
 
 def home_page():
     st.title("Ekonomika v elektroenergetike")
@@ -163,3 +440,9 @@ elif pages == "Cvičenie 8.":
         mime="application/octet-stream"
     )
     cvicenie_8()
+elif pages == "Odovzdanie výsledkov":
+    if _require_login_for_protected_pages():
+        upload_results_page()
+elif pages == "Prehľad výsledkov":
+    if _require_login_for_protected_pages():
+        view_results_page()
