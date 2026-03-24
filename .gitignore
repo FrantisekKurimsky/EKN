@@ -1,6 +1,8 @@
 .streamlit/secrets.toml
 uploads/
 EKN/
+pages/contest.py
+docs/merit_order_model.xlsx
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
