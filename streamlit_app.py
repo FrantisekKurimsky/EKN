@@ -17,6 +17,7 @@ from streamlit_pdf_viewer import pdf_viewer
 from pages.uploads import upload_page, results_page
 from pages.merit_order import merit_order_page
 # from pages.contest import contest_page
+from pages.prediction import predict_page
 from utils.auth import require_login_for_protected_pages, show_logout_button
 
 st.set_page_config(layout="wide")
@@ -36,6 +37,7 @@ exercise_pages = [
     "Cvičenie 7.",
     "Cvičenie 8.",
     "Merit Order",
+    "Predikcia výroby veternej energie",  # New page for prediction
     # "Sutaz",
 ]
 
@@ -194,7 +196,7 @@ elif pages == "Cvičenie 8.":
     )
     cvicenie_8()
 
-elif pages == "Merit Order - Hra":
+elif pages == "Merit Order":
     merit_order_page()
 
 # elif pages == "Sutaz":
@@ -207,3 +209,6 @@ elif pages == "Odovzdanie výsledkov":
 elif pages == "Prehľad výsledkov":
     if require_login_for_protected_pages():
         results_page()
+
+elif pages == "Predikcia výroby veternej energie":
+    predict_page()

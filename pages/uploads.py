@@ -9,7 +9,7 @@ def upload_page():
     """Page for uploading results."""
     st.title("Odovzdanie výsledkov")
     st.write("Táto stránka je určená na odovzdanie obrázkov výsledkov.")
-    st.info("Dnešné témy: negatívne ceny na day-ahead trhu a lineárna regresia medzi residual load a cenou.")
+    st.info("Dnešné témy: Predicia výroby veternej energie")
 
     try:
         get_firebase_clients()
@@ -22,8 +22,7 @@ def upload_page():
         topic = st.selectbox(
             "Téma odovzdania",
             [
-                "Negatívne ceny (day-ahead)",
-                "Lineárna regresia (Residual Load vs Price)",
+                "Predicia výroby veternej energie",
             ],
         )
         result_title = st.text_input("Názov výsledku")

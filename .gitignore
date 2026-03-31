@@ -3,6 +3,7 @@ uploads/
 EKN/
 pages/contest.py
 docs/merit_order_model.xlsx
+# docs/data-weather-nc/
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
