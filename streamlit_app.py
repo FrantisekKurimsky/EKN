@@ -47,9 +47,10 @@ if "last_exercise_choice" not in st.session_state:
     st.session_state.last_exercise_choice = "Domov"
 
 exercise_choice = st.sidebar.selectbox(
-    "",
+    "Select exercise",
     exercise_pages,
     index=exercise_pages.index(st.session_state.last_exercise_choice),
+    label_visibility="collapsed",
 )
 
 if exercise_choice != st.session_state.last_exercise_choice:
