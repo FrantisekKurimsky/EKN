@@ -58,7 +58,6 @@ def upload_page():
 def results_page():
     """Page for viewing submitted results with topic filter."""
     st.title("Prehľad výsledkov")
-    st.write("Zobrazenie odovzdaných výsledkov z Firebase.")
 
     try:
         db, bucket = get_firebase_clients()

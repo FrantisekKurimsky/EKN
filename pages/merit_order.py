@@ -7,39 +7,23 @@ from datetime import datetime
 from uuid import uuid4
 
 
+TECHNOLOGIES = {
+    "Nuclear": {"default_capacity": 1200},
+    "Hydro": {"default_capacity": 300},
+    "Wind": {"default_capacity": 200},
+    "Solar": {"default_capacity": 150},
+    "Biomass": {"default_capacity": 120},
+    "CCGT": {"default_capacity": 450},
+    "OCGT": {"default_capacity": 250},
+    "Coal": {"default_capacity": 600},
+    "Oil": {"default_capacity": 150},
+}
+
+
 def merit_order_page():
     """Interactive Merit Order game with capacity selection"""
-    st.title("⚡ Merit Order")
+    st.title("⚡ Simple Merit Order")
     st.write("Nastavte si elektráreň, kapacitu, ponúkanú cenu a pozrite si, ako funguje trh.")
-
-    # Load Excel data
-    try:
-        excel_file = "docs/merit_order_model.xlsx"
-        wb = openpyxl.load_workbook(excel_file)
-        assumptions_ws = wb["Assumptions"]
-
-        # Extract technologies from Assumptions sheet
-        technologies = {}
-        for row_idx in range(6, 14):  # Rows 6-13 contain technology data
-            tech_name = assumptions_ws[f"A{row_idx}"].value
-            fuel_cost = assumptions_ws[f"B{row_idx}"].value
-            efficiency = assumptions_ws[f"C{row_idx}"].value
-            var_om = assumptions_ws[f"D{row_idx}"].value
-            co2_intensity = assumptions_ws[f"E{row_idx}"].value
-            capacity = assumptions_ws[f"G{row_idx}"].value
-
-            if tech_name:
-                technologies[tech_name.strip()] = {
-                    "fuel_cost": fuel_cost,
-                    "efficiency": efficiency if efficiency else 0,
-                    "var_om": var_om,
-                    "co2_intensity": co2_intensity if co2_intensity else 0,
-                    "default_capacity": capacity if capacity else 0,
-                }
-
-    except Exception as e:
-        st.error(f"Chyba pri načítaní Excelu: {e}")
-        return
 
     st.subheader("📖 Ako to funguje")
     st.write("""
@@ -62,9 +46,9 @@ def merit_order_page():
 
     col1, col2, col3 = st.columns(3)
     with col1:
-        selected_tech = st.selectbox("Technológia", list(technologies.keys()))
+        selected_tech = st.selectbox("Technológia", list(TECHNOLOGIES.keys()))
     with col2:
-        default_cap = technologies[selected_tech]["default_capacity"]
+        default_cap = TECHNOLOGIES[selected_tech]["default_capacity"]
         bid_capacity = st.number_input(
             "Kapacita (MW)", 
             min_value=10, 
@@ -75,7 +59,7 @@ def merit_order_page():
     with col3:
         bid_price = st.number_input("Ponuka (EUR/MWh)", min_value=-100, max_value=500, value=50, step=5)
 
-    if st.button("✅ Pridaj do merit order", use_container_width=True):
+    if st.button("✅ Pridaj do merit order", width="stretch"):
         st.session_state.merit_order_bids.append({
             "id": str(uuid4())[:8],
             "technology": selected_tech,
@@ -268,7 +252,7 @@ def merit_order_page():
             }
             for i, bid in enumerate(sorted_bids)
         ])
-        st.dataframe(dispatch_df, use_container_width=True, hide_index=True)
+        st.dataframe(dispatch_df, width="stretch", hide_index=True)
 
         # Revenue calculation
         if market_price is not None:
@@ -284,16 +268,16 @@ def merit_order_page():
                     "Status": "✓ Zapojená" if bid in dispatch_list else "✗ Nezapojená",
                 })
             revenue_df = pd.DataFrame(revenue_data)
-            st.dataframe(revenue_df, use_container_width=True, hide_index=True)
+            st.dataframe(revenue_df, width="stretch", hide_index=True)
 
     # Management buttons
     st.markdown("---")
     col1, col2 = st.columns(2)
     with col1:
-        if st.button("🗑️ Vyčisti merit order", use_container_width=True):
+        if st.button("🗑️ Vyčisti merit order", width="stretch"):
             st.session_state.merit_order_bids = []
             st.rerun()
     with col2:
-        if st.button("🔄 Zresetuj demand", use_container_width=True):
+        if st.button("🔄 Zresetuj demand", width="stretch"):
             st.session_state.merit_order_demand = 1500
             st.rerun()

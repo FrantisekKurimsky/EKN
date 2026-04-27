@@ -4,7 +4,7 @@ import hmac
 
 
 def require_login_for_protected_pages() -> bool:
-    """Check if user is authenticated for protected pages (upload/results)."""
+    """Check if user is authenticated for protected pages."""
     auth_config = st.secrets.get("auth")
     if not auth_config or not auth_config.get("password"):
         st.error("Prihlasovanie nie je nastavene. Doplňte [auth] password do .streamlit/secrets.toml.")
@@ -34,8 +34,10 @@ def require_login_for_protected_pages() -> bool:
 
 
 def show_logout_button():
-    """Display logout button in sidebar if user is authenticated."""
+    """Display logout button in page header area if user is authenticated."""
     if st.session_state.get("is_authenticated"):
-        if st.sidebar.button("Odhlásiť"):
-            st.session_state.is_authenticated = False
-            st.rerun()
+        col_left, col_right = st.columns([8, 1])
+        with col_right:
+            if st.button("Odhlásiť", key="logout_button"):
+                st.session_state.is_authenticated = False
+                st.rerun()

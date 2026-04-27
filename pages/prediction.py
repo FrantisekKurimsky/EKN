@@ -6,7 +6,7 @@ import os
 # ── helper ────────────────────────────────────────────────────────────────────
 def img(path: str, caption: str = ""):
     if os.path.exists(path):
-        st.image(path, caption=caption, use_container_width=True)
+        st.image(path, caption=caption, width='stretch')
     else:
         st.info(f"📷 Obrázok nenájdený: `{path}`")
 
@@ -27,52 +27,52 @@ def predict_page():
     )
     st.divider()
     
-    st.header("📁 Dátové súbory (ERA5 NetCDF)")
-    st.markdown(
-        """
-        Nižšie sú k dispozícii všetky meteorologické NetCDF súbory z priečinka
-        `docs/data-weather-nc`. Každý súbor obsahuje hodinové ERA5 dáta
-        (u100, v100, t2m, sp, d2m, tcc) pre danú krajinu za rok 2025.
-        """
-    )
+    # st.header("📁 Dátové súbory (ERA5 NetCDF)")
+    # st.markdown(
+    #     """
+    #     Nižšie sú k dispozícii všetky meteorologické NetCDF súbory z priečinka
+    #     `docs/data-weather-nc`. Každý súbor obsahuje hodinové ERA5 dáta
+    #     (u100, v100, t2m, sp, d2m, tcc) pre danú krajinu za rok 2025.
+    #     """
+    # )
     
-    DATA_DIR = Path("docs/data-weather-nc")
+    # DATA_DIR = Path("docs/data-weather-nc")
     
-    if not DATA_DIR.exists():
-        st.warning(
-            f"⚠️ Priečinok `{DATA_DIR}` nebol nájdený. "
-            "Uistite sa, že existuje relatívne k miestu spustenia aplikácie."
-        )
-    else:
-        files = sorted(DATA_DIR.iterdir())
-        nc_files = [f for f in files if f.is_file()]
+    # if not DATA_DIR.exists():
+    #     st.warning(
+    #         f"⚠️ Priečinok `{DATA_DIR}` nebol nájdený. "
+    #         "Uistite sa, že existuje relatívne k miestu spustenia aplikácie."
+    #     )
+    # else:
+    #     files = sorted(DATA_DIR.iterdir())
+    #     nc_files = [f for f in files if f.is_file()]
     
-        if not nc_files:
-            st.info("Priečinok je prázdny.")
-        else:
-            # Group into rows of 4 columns
-            COLS = 4
-            rows = [nc_files[i : i + COLS] for i in range(0, len(nc_files), COLS)]
+    #     if not nc_files:
+    #         st.info("Priečinok je prázdny.")
+    #     else:
+    #         # Group into rows of 4 columns
+    #         COLS = 4
+    #         rows = [nc_files[i : i + COLS] for i in range(0, len(nc_files), COLS)]
     
-            for row in rows:
-                cols = st.columns(COLS)
-                for col, fpath in zip(cols, row):
-                    size_mb = fpath.stat().st_size / (1024 * 1024)
-                    label = fpath.stem                      # filename without extension
-                    ext   = fpath.suffix.lstrip(".")        # e.g. "nc"
+    #         for row in rows:
+    #             cols = st.columns(COLS)
+    #             for col, fpath in zip(cols, row):
+    #                 size_mb = fpath.stat().st_size / (1024 * 1024)
+    #                 label = fpath.stem                      # filename without extension
+    #                 ext   = fpath.suffix.lstrip(".")        # e.g. "nc"
     
-                    with col:
-                        with open(fpath, "rb") as fh:
-                            data = fh.read()
-                        st.download_button(
-                            label=f"⬇️ {label}",
-                            data=data,
-                            file_name=fpath.name,
-                            mime="application/octet-stream",
-                            help=f"{fpath.name}  •  {size_mb:.1f} MB",
-                            use_container_width=True,
-                            key=f"dl_{fpath.name}",   # unique key per button
-                        )
+    #                 with col:
+    #                     with open(fpath, "rb") as fh:
+    #                         data = fh.read()
+    #                     st.download_button(
+    #                         label=f"⬇️ {label}",
+    #                         data=data,
+    #                         file_name=fpath.name,
+    #                         mime="application/octet-stream",
+    #                         help=f"{fpath.name}  •  {size_mb:.1f} MB",
+    #                         use_container_width=True,
+    #                         key=f"dl_{fpath.name}",   # unique key per button
+    #                     )
 
     # ─────────────────────────────────────────────────────────────────────────────
     #  1. NAČÍTANIE DÁT Z GRIB

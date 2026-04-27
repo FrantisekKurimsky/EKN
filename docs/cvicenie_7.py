@@ -92,7 +92,7 @@ def cvicenie_7():
         import matplotlib.pyplot as plt
         plt.figure(figsize=(8, 4))
         plt.scatter(data[['Residual load']], data[['Day Ahead Auction (DE-LU)']], s=2)
-        st.pyplot(plt.gcf(), use_container_width=False)
+        st.pyplot(plt.gcf(), width='content')
 
         st.subheader('Lineárna regresia')
         st.write('Importovanie LinearRegresion')
@@ -124,7 +124,7 @@ def cvicenie_7():
         plt.figure(figsize=(8, 4))
         plt.scatter(data[['Residual load']], data[['Day Ahead Auction (DE-LU)']], s=1, color='blue')
         plt.plot(data[['Residual load']], y_pred, linewidth=0.8, color='red')
-        st.pyplot(plt.gcf(), use_container_width=False)
+        st.pyplot(plt.gcf(), width='content')
 
         st.subheader('Zobrazenie reálnych hodnôt a predikcií v čase')
         st.code(
