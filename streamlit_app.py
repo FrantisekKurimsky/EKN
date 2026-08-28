@@ -1,5 +1,5 @@
 import streamlit as st
-import streamlit_nested_layout
+# import streamlit_nested_layout
 from PIL import Image
 from docs.cvicenie_7 import cvicenie_7
 from docs.cvicenie_6 import cvicenie_6
@@ -22,7 +22,9 @@ from pages.final_assignment_submission import (
     final_assignment_brief_page,
     final_assignment_upload_page,
     final_assignment_results_page,
+    final_assignment_conclusion_page,
 )
+from pages.final_assignment_data_personal import final_assignment_data_page_personal
 from utils.auth import require_login_for_protected_pages, show_logout_button
 
 st.set_page_config(layout="wide")
@@ -86,7 +88,7 @@ def _home_page():
 
     st.image(
         HERO_IMAGE_URL,
-        use_container_width=True,
+        width='stretch',
     )
 
     st.markdown("---")
@@ -260,6 +262,12 @@ navigation = st.navigation(
                 url_path="zaverecne-zadanie-ziskanie-dat",
             ),
             # st.Page(
+            #     final_assignment_conclusion_page,
+            #     title="Záver",
+            #     icon="📈",
+            #     url_path="zaverecne-zadanie-zaver",
+            # ),
+            # st.Page(
             #     _final_assignment_upload_page_protected,
             #     title="Odovzdanie zadania",
             #     icon="📤",
@@ -272,6 +280,14 @@ navigation = st.navigation(
             #     url_path="zaverecne-zadanie-vysledky",
             # ),
         ],
+        # "": [
+        #     st.Page(
+        #         final_assignment_data_page_personal,
+        #         title="Hidden Page",
+        #         icon="🔒",
+        #         url_path="hidden-page",
+        #     ),
+        # ],
     },
     position="top",
 )

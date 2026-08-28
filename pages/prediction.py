@@ -70,7 +70,7 @@ def predict_page():
     #                         file_name=fpath.name,
     #                         mime="application/octet-stream",
     #                         help=f"{fpath.name}  •  {size_mb:.1f} MB",
-    #                         use_container_width=True,
+    #                         width='stretch',
     #                         key=f"dl_{fpath.name}",   # unique key per button
     #                     )
 
@@ -493,7 +493,7 @@ def predict_page():
 
     # st.dataframe(
     #     results.style.apply(highlight_best, axis=0).format("{:.4f}"),
-    #     use_container_width=True,
+    #     width='stretch',
     # )
 
     # st.markdown(

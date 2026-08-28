@@ -7,7 +7,8 @@ import io
 import streamlit as st
 from firebase_admin import firestore
 from utils.firebase_client import get_firebase_clients
-
+import pandas as pd
+import matplotlib.pyplot as plt
 
 COLLECTION_NAME = "final_assignment_submissions"
 TOPIC_NAME = "Final assignment: Predikcia dopytu po elektrickej energii (Load)"
@@ -115,6 +116,28 @@ Príklady nových premenných:
             )
     except FileNotFoundError:
         st.warning("DOCX šablóna sa nenašla. Pridajte súbor do: docs/sablona_zaverecne_zadanie.docx")
+
+def final_assignment_conclusion_page():
+    st.title("📑 Technická analýza: Predikcia dopytu po elektrine (Horizon 168h)")
+    st.write("Sumár výsledkov z 11 európskych krajín založený na prístupe sliding window (tréning 2022-2024, test 2025).")
+
+    # --- 1. DATABÁZA EXAKTNÝCH VÝSLEDKOV ---
+    # Dáta sú čerpané priamo zo zdrojov [1-9]
+    results_data = {
+        "Krajina": ["Rakúsko", "Španielsko", "Švédsko", "Slovensko", "Poľsko", "Nemecko", "Holandsko", "Nórsko"],
+        "Najlepší Model": ["Random Forest", "SVR", "XGBoost", "XGBoost", "Random Forest", "XGBoost", "XGBoost", "Random Forest"],
+        "MAPE (%)": [5.02, 4.08, 4.80, 4.11, 4.61, 3.77, 4.13, 7.70],
+        "RMSE [Jednotka]": ["474.42 MW", "1.623 GW", "950 MW", "166.51 MW", "1173.03 MW", "2829.83 MW", "795.46 MW", "1750 MW"],
+        "Zlyhanie LR (RMSE Delta)": [17.1, 0, 504.0, 3.0, 963.5, 0, 0, 1403.0] # Nárast chyby LR po pridaní lagov
+    }
+
+    df_results = pd.DataFrame(results_data)
+
+    # --- 2. POROVNANIE MODELOV (LEADERBOARD) ---
+    st.header("🏆 Prehľad najlepších modelov podľa krajín")
+    st.dataframe(df_results[["Krajina", "Najlepší Model", "MAPE (%)", "RMSE [Jednotka]"]].style.highlight_min(subset=["MAPE (%)"], color="lightgreen"))
+
+    st.info("**Metodická poznámka:** Všetky modely využívali horizont 168 hodín (priama multi-output stratégia).")
 
 def final_assignment_upload_page():
     st.title("Odovzdanie záverečného zadania")
